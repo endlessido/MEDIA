@@ -1,0 +1,318 @@
+LogTime : 2013-02-20 14:23:19,529 ThreadID:[21] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : Submit a Project
+System.Exception: upload img faild
+LogTime : 2013-02-20 14:23:19,560 ThreadID:[21] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : Submit a Project
+System.Exception: upload img faild
+LogTime : 2013-02-20 16:28:47,792 ThreadID:[6] LogLevel : ERROR ErrorClass : MEDIA.WebUI.CreateProject property:[(null)] - ErrorMsg : Submit a Project
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at MEDIA.BLL.GoodyService.Add(String goodyName, String goodyDesc, String goodyNum, String goodyPrice, String ddlCurrency, String unlimited, Int32 projectId) in E:\MEDIA\branches\MEDIA.BLL\GoodyService.cs:line 48
+   at MEDIA.WebUI.CreateProject.btnSubmit_Click(Object sender, EventArgs e) in E:\MEDIA\branches\MEDIA.WebUI\CreateProject.aspx.cs:line 89
+LogTime : 2013-02-20 18:00:07,404 ThreadID:[21] LogLevel : ERROR ErrorClass : MEDIA.WebUI.CreateProject property:[(null)] - ErrorMsg : Submit a Project
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at MEDIA.BLL.DonationProjectService.AddProjectGoody(String goodyName, String goodyDesc, String goodyNum, String goodyPrice, String ddlCurrency, String unlimited, DonationProject projectModel) in E:\MEDIA\branches\MEDIA.BLL\DonationProjectService.cs:line 48
+   at MEDIA.BLL.DonationProjectService.Add(DonationProject newModel, String goodyName, String goodyDesc, String goodyNum, String goodyPrice, String ddlCurrency, String unlimited) in E:\MEDIA\branches\MEDIA.BLL\DonationProjectService.cs:line 23
+   at MEDIA.WebUI.CreateProject.btnSubmit_Click(Object sender, EventArgs e) in E:\MEDIA\branches\MEDIA.WebUI\CreateProject.aspx.cs:line 84
+LogTime : 2013-02-20 19:03:08,045 ThreadID:[23] LogLevel : ERROR ErrorClass : MEDIA.WebUI.CreateProject property:[(null)] - ErrorMsg : Submit a Project
+System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at MEDIA.WebUI.CreateProject.SaveUploadFile() in E:\MEDIA\branches\MEDIA.WebUI\CreateProject.aspx.cs:line 65
+   at MEDIA.WebUI.CreateProject.btnSubmit_Click(Object sender, EventArgs e) in E:\MEDIA\branches\MEDIA.WebUI\CreateProject.aspx.cs:line 83
+LogTime : 2013-02-21 16:48:11,275 ThreadID:[13] LogLevel : ERROR ErrorClass : MEDIA.WebUI.CreateProject property:[(null)] - ErrorMsg : Submit a Project
+System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at MEDIA.WebUI.CreateProject.btnSubmit_Click(Object sender, EventArgs e) in E:\MEDIA\branches\MEDIA.WebUI\CreateProject.aspx.cs:line 84
+LogTime : 2013-02-21 17:40:10,193 ThreadID:[21] LogLevel : ERROR ErrorClass : MEDIA.WebUI.CreateProject property:[(null)] - ErrorMsg : Submit a Project
+System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at MEDIA.WebUI.CreateProject.btnSubmit_Click(Object sender, EventArgs e) in E:\MEDIA\branches\MEDIA.WebUI\CreateProject.aspx.cs:line 84
+LogTime : 2013-02-21 18:00:56,534 ThreadID:[21] LogLevel : ERROR ErrorClass : MEDIA.WebUI.CreateProject property:[(null)] - ErrorMsg : Submit a Project
+System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at MEDIA.WebUI.CreateProject.btnSubmit_Click(Object sender, EventArgs e) in E:\MEDIA\branches\MEDIA.WebUI\CreateProject.aspx.cs:line 84
+LogTime : 2013-02-21 18:01:01,482 ThreadID:[18] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-21 18:01:08,659 ThreadID:[18] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-21 18:01:12,079 ThreadID:[12] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-21 18:01:15,844 ThreadID:[15] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-21 18:01:18,327 ThreadID:[6] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-21 18:01:21,659 ThreadID:[25] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-21 18:01:24,079 ThreadID:[15] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 10:35:27,040 ThreadID:[10] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 11:02:24,680 ThreadID:[17] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 11:24:59,480 ThreadID:[29] LogLevel : ERROR ErrorClass : MEDIA.WebUI.CreateProject property:[(null)] - ErrorMsg : Submit a Project
+System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at MEDIA.WebUI.CreateProject.btnSubmit_Click(Object sender, EventArgs e) in E:\MEDIA\branches\MEDIA.WebUI\CreateProject.aspx.cs:line 84
+LogTime : 2013-02-22 14:28:18,002 ThreadID:[32] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 17:27:22,680 ThreadID:[16] LogLevel : ERROR ErrorClass : MEDIA.WebUI.CreateProject property:[(null)] - ErrorMsg : Submit a Project
+System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at MEDIA.WebUI.CreateProject.btnSubmit_Click(Object sender, EventArgs e) in E:\MEDIA\branches\MEDIA.WebUI\CreateProject.aspx.cs:line 118
+LogTime : 2013-02-22 17:27:32,607 ThreadID:[15] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 17:27:35,820 ThreadID:[18] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 17:27:38,385 ThreadID:[21] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 17:27:56,737 ThreadID:[22] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 17:27:59,410 ThreadID:[19] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 17:31:12,680 ThreadID:[6] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 18:00:44,363 ThreadID:[25] LogLevel : ERROR ErrorClass : MEDIA.WebUI.CreateProject property:[(null)] - ErrorMsg : Submit a Project
+System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at MEDIA.WebUI.CreateProject.btnSubmit_Click(Object sender, EventArgs e) in E:\MEDIA\branches\MEDIA.WebUI\CreateProject.aspx.cs:line 118
+LogTime : 2013-02-22 18:00:47,723 ThreadID:[25] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 18:00:48,468 ThreadID:[29] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 18:00:50,923 ThreadID:[25] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 18:01:02,643 ThreadID:[25] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 18:01:06,590 ThreadID:[32] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 18:01:08,313 ThreadID:[35] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 18:01:10,840 ThreadID:[30] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 18:01:31,680 ThreadID:[32] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 18:18:53,565 ThreadID:[25] LogLevel : ERROR ErrorClass : MEDIA.WebUI.CreateProject property:[(null)] - ErrorMsg : Submit a Project
+System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at MEDIA.WebUI.CreateProject.btnSubmit_Click(Object sender, EventArgs e) in E:\MEDIA\branches\MEDIA.WebUI\CreateProject.aspx.cs:line 118
+LogTime : 2013-02-22 18:18:56,756 ThreadID:[14] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 18:18:58,111 ThreadID:[25] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 18:19:03,878 ThreadID:[27] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 18:19:08,788 ThreadID:[27] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 18:19:14,073 ThreadID:[27] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 18:19:20,001 ThreadID:[27] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-22 18:19:25,773 ThreadID:[10] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-25 17:02:38,991 ThreadID:[11] LogLevel : ERROR ErrorClass : MEDIA.WebUI.CreateProject property:[(null)] - ErrorMsg : Submit a Project
+System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at MEDIA.WebUI.CreateProject.btnSubmit_Click(Object sender, EventArgs e) in E:\MEDIA\branches\MEDIA.WebUI\CreateProject.aspx.cs:line 122
+LogTime : 2013-02-25 17:54:41,058 ThreadID:[30] LogLevel : ERROR ErrorClass : MEDIA.WebUI.CreateProject property:[(null)] - ErrorMsg : Submit a Project
+System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at MEDIA.WebUI.CreateProject.btnSubmit_Click(Object sender, EventArgs e) in E:\MEDIA\branches\MEDIA.WebUI\CreateProject.aspx.cs:line 122
+LogTime : 2013-02-25 17:55:24,216 ThreadID:[25] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-25 17:56:12,971 ThreadID:[5] LogLevel : ERROR ErrorClass : MEDIA.WebUI.CreateProject property:[(null)] - ErrorMsg : Submit a Project
+System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at MEDIA.WebUI.CreateProject.btnSubmit_Click(Object sender, EventArgs e) in E:\MEDIA\branches\MEDIA.WebUI\CreateProject.aspx.cs:line 122
+LogTime : 2013-02-25 17:56:15,291 ThreadID:[5] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-26 11:46:19,488 ThreadID:[15] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-26 13:33:50,788 ThreadID:[103] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-27 11:59:39,554 ThreadID:[9] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-27 13:44:12,854 ThreadID:[13] LogLevel : ERROR ErrorClass : MEDIA.WebUI.CreateProject property:[(null)] - ErrorMsg : Submit a Project
+System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at MEDIA.WebUI.CreateProject.btnSubmit_Click(Object sender, EventArgs e) in E:\MEDIA\branches\MEDIA.WebUI\CreateProject.aspx.cs:line 129
+LogTime : 2013-02-27 13:44:16,059 ThreadID:[12] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-27 13:44:17,171 ThreadID:[13] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-27 13:44:19,771 ThreadID:[16] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-27 13:44:21,380 ThreadID:[13] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-27 13:44:23,874 ThreadID:[17] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97
+LogTime : 2013-02-27 14:30:35,212 ThreadID:[11] LogLevel : ERROR ErrorClass : MEDIA.WebUI.BasePage property:[(null)] - ErrorMsg : GetPercent
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at MEDIA.WebUI.BasePage.GetPercent(Object totalFunding, Object receivedFunding) in E:\MEDIA\branches\MEDIA.WebUI\BasePage.cs:line 97

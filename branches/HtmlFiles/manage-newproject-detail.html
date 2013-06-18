@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>FA Raetia Media</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/modern.css" rel="stylesheet">
+<link href="css/modern-responsive.css" rel="stylesheet">
+<link href="css/manager.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('#page-giftdetail').on('click', 'a', function(event){
+            event.preventDefault();
+            var sTgt = $(event.target),
+                dTgt = sTgt.parent('p').siblings('ul'),
+                row = dTgt.children('li').length;
+
+            if (dTgt.data('show') === undefined || dTgt.data('show') === false) {
+                if (row % 3 === 0) {
+                    dTgt.data('show', true).animate({
+                        'height': 20 * row / 3 + 'px'
+                    });
+                } else {
+                    dTgt.data('show', true).animate({
+                        'height': 20 * (Math.floor(row/3) + 1) + 'px'
+                    });
+                    
+                }
+                return;
+            }
+            if (dTgt.data('show') === true){
+                dTgt.data('show', false).animate({
+                    'height':  '100px'
+                });
+                return;
+            }
+        })
+    });
+</script>
+</head>
+<body>
+<div class="page-header">
+    <div class="page-header-content">
+        <h2>New Project Detail</h2>
+    </div>
+</div>
+<div class="page-region bg-color-white">
+    <div class="page-region-content">
+        <div class="page-dashboard">
+            <h3><span class="fg-color-red">{Name of the organisation}</span> needs <span class="fg-color-red">{What do you need}</span></h3>
+            <h4>Project Category: <span class="fg-color-blue">Football</span></h4>
+            <h4>Project Region: Basel, <span class="fg-color-blue">Switzerland</span></h4>
+            <dl class="page-dash-box">
+                <dt class="bg-color-darken fg-color-white clearfix tlr"><span class="fl">Project Summary</span></dt>
+                <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius cumque asperiores nostrum atque rem corporis non obcaecati sapiente. In eligendi ipsam ab alias doloremque porro nobis voluptates vitae. Nihil dolorem.</dd>
+            </dl>
+            <dl class="page-dash-box">
+                <dt class="bg-color-darken fg-color-white clearfix tlr"><span class="fl">About Project Founder</span></dt>
+                <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et corporis obcaecati architecto aut quam nesciunt autem dolore praesentium ad adipisci nihil id eius quis alias temporibus animi voluptates non numquam.</dd>
+            </dl>
+            <dl class="page-dash-box">
+                <dt class="bg-color-darken fg-color-white clearfix tlr"><span class="fl">Project Reason</span></dt>
+                <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero nisi dolor esse quisquam porro similique excepturi eaque laboriosam iure aliquid fugiat a rem adipisci laudantium illo maxime soluta non sequi.</dd>
+            </dl>
+            <dl class="page-dash-box">
+                <dt class="bg-color-darken fg-color-white clearfix tlr"><span class="fl">Founder's Vision</span></dt>
+                <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo quidem sunt cumque itaque modi eos veritatis nobis necessitatibus accusantium corrupti laboriosam corporis incidunt ad nulla quae hic autem laborum maiores.</dd>
+            </dl>
+            <dl class="page-dash-box">
+                <dt class="bg-color-darken fg-color-white clearfix tlr"><span class="fl">Founder's Vision</span></dt>
+                <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo quidem sunt cumque itaque modi eos veritatis nobis necessitatibus accusantium corrupti laboriosam corporis incidunt ad nulla quae hic autem laborum maiores.</dd>
+            </dl>
+            <h4>Project Time span: <span class="fg-color-blue">66 days</span></h4>
+            <h4>How much the donation will collect: <span class="fg-color-blue">CHF 1800</span></h4>
+            <h4>Founder's homepage: <a class="fg-color-blue" href="#">http://www.dummylocation.com</a></h4>
+            <h4>Founder's facebook: <a class="fg-color-blue" href="#">http://www.facebook.com/dummylocation</a></h4>
+            <p>Project Image: <br><img src="images/temp/football.jpg" alt="project name" width="150" height="150" /></p>
+            <p>Project Video:</p>
+            <div class="player"><img alt="YOUTUBE PLAYER" src="images/temp/player.jpg"></div>
+            <dl class="page-dash-box" id="page-giftdetail">
+                <dt class="bg-color-darken fg-color-white clearfix tlr"><span class="fl">Goodies for donors</span></dt>
+                <dd>
+                    <table class="bordered striped hovered">
+                        <tr>
+                            <td>Name:</td><td>Lorem</td>
+                        </tr>
+                        <tr>
+                            <td>Description:</td><td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda earum non necessitatibus iste vitae fugit voluptatem quod cupiditate dicta odit sapiente commodi ea numquam reiciendis beatae officiis nisi fuga blanditiis.</td>
+                        </tr>
+                        <tr>
+                            <td>Quantity / Has Gone:</td><td>500 / 100</td>
+                        </tr>
+                        <tr>
+                            <td>How much:</td><td>CHF 50</td>
+                        </tr>
+                        <tr>
+                            <td>Donors:</td><td>
+                                <ul class="page-donors clearfix">
+                                    <li>lorem1</li>
+                                    <li>lorem2</li>
+                                    <li>lorem3</li>
+                                    <li>lorem4</li>
+                                    <li>lorem5</li>
+                                    <li>lorem6</li>
+                                    <li>lorem7</li>
+                                    <li>lorem8</li>
+                                    <li>lorem9</li>
+                                    <li>lorem10</li>
+                                    <li>lorem1</li>
+                                    <li>lorem2</li>
+                                    <li>lorem3</li>
+                                    <li>lorem4</li>
+                                    <li>lorem5</li>
+                                    <li>lorem6</li>
+                                    <li>lorem7</li>
+                                    <li>lorem8</li>
+                                    <li>lorem9</li>
+                                    <li>lorem10</li>
+                                    <li>lorem10</li>
+                                </ul>
+                                <p><a href="#">Show full list</a></p>
+                            </td>
+                        </tr>
+                    </table>
+                </dd>
+                <dd>
+                    <table class="bordered striped hovered">
+                        <tr>
+                            <td>Name:</td><td>Lorem</td>
+                        </tr>
+                        <tr>
+                            <td>Description:</td><td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda earum non necessitatibus iste vitae fugit voluptatem quod cupiditate dicta odit sapiente commodi ea numquam reiciendis beatae officiis nisi fuga blanditiis.</td>
+                        </tr>
+                        <tr>
+                            <td>Quantity / Has Gone:</td><td>500 / 244</td>
+                        </tr>
+                        <tr>
+                            <td>How much:</td><td>CHF 50</td>
+                        </tr>
+                        <tr>
+                            <td>Donors:</td><td>
+                                <ul class="page-donors clearfix">
+                                    <li>lorem1</li>
+                                    <li>lorem2</li>
+                                    <li>lorem3</li>
+                                    <li>lorem4</li>
+                                    <li>lorem5</li>
+                                    <li>lorem6</li>
+                                    <li>lorem7</li>
+                                    <li>lorem8</li>
+                                    <li>lorem9</li>
+                                    <li>lorem10</li>
+                                    <li>lorem1</li>
+                                    <li>lorem2</li>
+                                    <li>lorem3</li>
+                                    <li>lorem4</li>
+                                    <li>lorem5</li>
+                                    <li>lorem6</li>
+                                    <li>lorem7</li>
+                                    <li>lorem8</li>
+                                    <li>lorem9</li>
+                                    <li>lorem10</li>
+                                </ul>
+                                <p><a href="#">Show full list</a></p>
+                            </td>
+                        </tr>
+                    </table>
+                </dd>
+            </dl>
+            <p><button class="standart default">Approve</button><button>Reject</button></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

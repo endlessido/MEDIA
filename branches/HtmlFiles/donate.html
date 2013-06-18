@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>MDEIA.FAR</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/modern.css" rel="stylesheet">
+<link href="css/modern-responsive.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+
+<script type="text/javascript" src="js/modern/dropdown.js"></script>
+<script type="text/javascript" src="js/modern/accordion.js"></script>
+<script type="text/javascript" src="js/modern/buttonset.js"></script>
+<script type="text/javascript" src="js/modern/carousel.js"></script>
+<script type="text/javascript" src="js/modern/input-control.js"></script>
+<script type="text/javascript" src="js/modern/pagecontrol.js"></script>
+<script type="text/javascript" src="js/modern/rating.js"></script>
+<script type="text/javascript" src="js/modern/slider.js"></script>
+<script type="text/javascript" src="js/modern/tile-slider.js"></script>
+<script type="text/javascript" src="js/modern/tile-drag.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+
+        $('.page-availgoodie input').on('change', function(e){
+            if (e.target.checked) {
+                $('#page-customamount').val('').attr('disabled', 'disabled');
+            }
+        })
+
+        $('#page-customdonate').on('change', function(e){
+            if(e.target.checked){
+                $('.page-availgoodie input[type="checkbox"]').removeAttr('checked').attr('disabled','disabled');
+                $('#page-customamount').removeAttr('disabled');
+            } else {
+                $('.page-availgoodie input[type="checkbox"]').removeAttr('disabled');
+            }
+        });
+    });
+</script>
+</head>
+<body>
+    <div class="page">
+        <div class="nav-bar">
+            <div class="nav-bar-inner padding10">
+                <p class="element brand"><a href="#" class="fg-color-white"><span class="icon-home page-homeico"><!--FILM ICON--></span></a></p>
+                <span class="divider"><!--divider--></span>
+                <ul class="menu">
+                    <li><a href="#">How this site works</a></li>
+                    <li><a href="#">Fundraising</a></li>
+                    <li><a href="#">Partnerships</a></li>
+                </ul>
+                <ul class="menu fr">
+                    <li data-role="dropdown">
+                        <a href="#">Welcome, Username!</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">my profile</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="page secondary">
+        <div class="page-header">
+            <div class="page-header-content">
+                <h1>Donate <small>demo</small></h1>
+                <a class="back-button big page-back" href="/"></a>
+            </div>
+        </div>
+        <div class="page-region">
+            <div class="grid">
+                <div class="row">
+                    <div class="page-fundinfo span12 bg-color-red">
+                        <h3 class="fg-color-white">Funding Information</h3>
+                        <ul class="fg-color-white">
+                            <li>Goal: 4552 CHF</li>
+                            <li>Earned: 233 CHF</li>
+                            <li>Remaining: 4319 CHF</li>
+                        </ul>
+                    </div>
+                    <div class="page-prgs span8 bg-color-green6">
+                        <h3 class="fg-color-white">75% <small>of 100% of the goal</small></h3>
+                        <div class="progress-bar bg-color-white">
+                            <div class="bar bg-color-yellow" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="page-prgs tile-last span4 bg-color-green7">
+                        <h3 class="fg-color-white tlc">64 Days left</h3>
+                        <div class="progress-bar bg-color-white">
+                            <div class="bar bg-color-yellow" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span9">
+                        <form action="">
+                            <fieldset class="border-color-orange">
+                                <legend class="fg-color-blueDark">Donate Form</legend>
+                                <p class="fg-color-greenDark">How much do you like to give?</p>
+                                <div class="tile bg-color-green6 page-availgoodie">
+                                    <div class="tile-content">
+                                        <h4 class="nwbr">Gift Card <br><small>for CHF 20</small></h4>
+                                        <p>Gone:15<br>Remains:No limit</p>
+                                        <div class="brand tile-brand-input">
+                                            <label class="input-control checkbox">
+                                                <input type="checkbox">
+                                                <span class="helper">I want this goodie</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile bg-color-green1 page-availgoodie">
+                                    <div class="tile-content">
+                                        <h4 class="nwbr">Souvenir Album <br><small>for CHF 80</small></h4>
+                                        <p>Gone:6<br>Remains:200</p>
+                                        <div class="brand tile-brand-input">
+                                            <label class="input-control checkbox">
+                                                <input type="checkbox">
+                                                <span class="helper">I want this goodie</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile bg-color-green3 page-availgoodie">
+                                    <div class="tile-content">
+                                        <h4 class="nwbr">HonorMedal <br><small>for CHF 150</small></h4>
+                                        <p>Gone:20<br>Remains:70</p>
+                                        <div class="brand tile-brand-input">
+                                            <label class="input-control checkbox">
+                                                <input type="checkbox">
+                                                <span class="helper">I want this goodie</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <label class="input-control checkbox fl page-domd">
+                                        <input type="checkbox" id="page-customdonate">
+                                        <span class="helper">Or CHF :</span>
+                                    </label>
+                                    <div class="input-control text span1">
+                                        <input type="text" id="page-customamount" />
+                                        <button class="helper"></button>
+                                    </div>
+                                </div>
+                                <!-- <p class="fg-color-greenDark">Choose a goodie</p> -->
+                                <p class="fg-color-greenDark">Do you want to donate anonymously and abondon the goodie? (no login account needed)</p>
+                                <label class="input-control checkbox">
+                                    <input type="checkbox">
+                                    <span class="helper">YES</span>
+                                </label>
+                                <p class="fg-color-greenDark">Account Login</p>
+                                <div class="clearfix page-dologin">
+                                    <label for="input-email">Email:</label>
+                                    <div class="input-control text span2">
+                                        <input type="text" id="input-email" />
+                                        <button class="helper"></button>
+                                    </div>
+                                    <label for="input-pass">Password:</label>
+                                    <div class="input-control text span2">
+                                        <input type="text" id="input-pass" />
+                                        <button class="helper"></button>
+                                    </div>
+                                </div>
+                                <p class="page-doreg"><a href="#">Create an account</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">forgot password?</a></p>
+                                <p class="fg-color-greenDark">Which method do you prefer?</p>
+                                <label class="input-control radio">
+                                    <input type="radio">
+                                    <span class="helper">Credit Card</span>
+                                </label>
+                                <label class="input-control radio">
+                                    <input type="radio">
+                                    <span class="helper">PayPal</span>
+                                </label>
+                                <div class="as-block">
+                                    <label class="input-control checkbox">
+                                        <input type="checkbox" checked="checked">
+                                        <span class="helper">Yes, please send me newsletter.</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <div class="page-prgs">
+                                <p class="tlc"><input type="submit" class="bg-color-green5" value="Donate"/></p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="span3">
+                        <div class="page-prgs span3 bg-color-green3">
+                            <h3 class="fg-color-white">Gift Card <br><small>for CHF 20</small></h3>
+                            <p class="fg-color-white">Gone:15, Remains:No limit</p>
+                            <div class="progress-bar bg-color-white">
+                                <div class="bar bg-color-yellow" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="page-prgs span3 bg-color-green5">
+                            <h3 class="fg-color-white">Souvenir Album <br><small>for CHF 80</small></small></h3>
+                            <p class="fg-color-white">Gone:6, Remains:200</p>
+                            <div class="progress-bar bg-color-white">
+                                <div class="bar bg-color-yellow" style="width: 3%"></div>
+                            </div>
+                        </div>
+                        <div class="page-prgs tile-last span3 bg-color-green6">
+                            <h3 class="fg-color-white">Honor Medal <br><small>for CHF 150</small></small></h3>
+                            <p class="fg-color-white">Gone:20, Remains:70</p>
+                            <div class="progress-bar bg-color-white">
+                                <div class="bar bg-color-yellow" style="width: 22%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer page">
+        <div class="nav-bar">
+            <div class="nav-bar-inner padding10">
+                <span class="element">
+                    2012, Site Name XYZ &copy; All rights Reserved
+                </span>
+                <span class="divider"><!--divider--></span>
+                <ul class="menu">
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Site map</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

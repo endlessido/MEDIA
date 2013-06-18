@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>MDEIA.FAR</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/modern.css" rel="stylesheet">
+<link href="css/modern-responsive.css" rel="stylesheet">
+<link href="css/validationEngine.jquery.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/modern/multidropdown.js"></script>
+<script type="text/javascript" src="js/modern/buttonset.js"></script>
+<script type="text/javascript" src="js/modern/carousel.js"></script>
+<script type="text/javascript" src="js/modern/input-control.js"></script>
+<script type="text/javascript" src="js/modern/slider.js"></script>
+<script type="text/javascript" src="js/modern/tile-slider.js"></script>
+<script type="text/javascript" src="js/modern/tile-drag.js"></script>
+<script type="text/javascript" src="js/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="js/languages/jquery.validationEngine-en.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('#page-forms').validationEngine();
+        $('#page-search').on('click', 'input[type="text"],input[type="submit"]',function(event){
+            event.preventDefault();
+        })
+    });
+</script>
+</head>
+<body>
+    <form action="" id="page-forms">
+        <div class="page">
+            <div class="nav-bar"> 
+                <div class="nav-bar-inner padding10">
+                    <p class="element brand"><a href="http://www.google.com" title="Home" class="fg-color-white ico-home">&#xE000;</a></p>
+                    <span class="divider"><!--divider--></span>
+                    <ul class="menu">
+                        <li><a href="#">Create A Project</a></li>
+                        <li><a href="#">Search Project</a></li>
+                    </ul>
+                    <ul class="menu fr">
+                        <li data-role="dropdown">
+                            <a href="#"><span class="label warning">5</span> Notices</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><i class="icon-gift-2"></i> <span class="label warning">2</span> Donated Projects</a></li>
+                                <li><a href="#"><i class="icon-credit-card"></i> <span class="label warning">1</span> Unpayed Projects</a></li>
+                                <li><a href="#"><i class="icon-chart-alt"></i> <span class="label warning">2</span> Published Projects</a></li>
+                            </ul>
+                        </li>
+                        <li data-role="dropdown"><a href="#">Login</a>
+                            <div class="dropdown-menu dropdown-form">
+                                <div class="input-control text">
+                                    <input type="email" name="email" placeholder="Enter your email" class="validate[required,custom[email]]" data-prompt-position="topRight" />
+                                    <button class="helper"></button>
+                                </div>
+                                <div class="input-control password">
+                                    <input type="password" class="validate[required]" data-prompt-position="bottomRight" placeholder="Enter password" />
+                                    <button class="helper"></button>
+                                </div>
+                                <label class="input-control checkbox">
+                                    <input type="checkbox">
+                                    <span class="helper">Remember Me</span>
+                                </label>
+                                <input type="submit" class="bg-color-green5" value="Submit"/>
+                                <p><a href="http://www.google.com" class="fg-color-blue">Forgot Password?</a></p>
+                            </div>
+                        </li>
+                        <li><a href="#">Regist</a></li>
+                        <li data-role="dropdown">
+                            <a href="#">Language</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><img src="images/flag-gb.png" alt="English"> English</a></li>
+                                <li><a href="#"><img src="images/flag-de.png" alt="German"> German</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page">
+            <div class="page-header">
+                <div class="page-header-content">
+                    <h1 class="tlc page-index-header"><img src="images/logo.png" width="100" height="100" alt="UNICORN"><span class="ibk">SUPPORTYOURLOCALTEAM</span></h1>
+                </div>
+            </div>
+            <div class="page-region">
+                <div class="page-region-content clearfix">
+                    <div class="tile bg-hvwki double double-vertical bg-color-green1">
+                        <a href="#">
+                            <div class="tile-content">
+                                <p class="tile-desc tlr"><span class="icon-help page-tileico"><!--HELP ICON--></span></p>
+                                <h2>What  is  Support Your Local Team?</h2>
+                                <p class="tile-desc tile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta neque sequi ducimus perspiciatis impedit voluptatem sapiente magnam id aperiam nemo.</p>
+                                <div class="brand">
+                                    <p class="tile-desc"><span class="icon-arrow-right-3 page-lnkico"><!--ARROW ICON--></span> Figure it out</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="tile quadro tile-last double-vertical bg-color-red1">
+                        <div class="tile-content">
+                            <h3 class="fg-color-lighten">Projects of the day:</h3>
+                            <div class="hero-unit">
+                                <div data-param-duration="300" data-param-effect="fade" data-role="carousel" class="carousel" id="carousel1">
+                                    <div class="slides">
+                                        <div id="slide1" class="slide" data-bgimg="images/temp/youtube.jpg">
+                                            <a href="#">
+                                                <h2 class="fg-color-white">FC Basel needs a team car</h2>
+                                                <p class="bg-color-white padding10 fg-color-darken"><img src="images/temp/football.jpg" alt="PROJECT NAME" width="84" height="84">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex qui eum facilis similique quis blanditiis eligendi placeat omnis laudantium labore quia nobis vero consequatur</p>
+                                                <h3><small class="fg-color-white">Available Goodies:</small></h3>
+                                                <p class="fg-color-white">Tickets of UEFA Champions League</p>
+                                            </a>
+                                        </div>
+                                        <div id="slide2" class="slide" data-bgimg="images/temp/wiki.jpg">
+                                            <a href="#">
+                                                <h2 class="fg-color-white">FC Basel youth team needs new shirts</h2>
+                                                <p class="bg-color-white padding10 fg-color-darken"><img src="images/temp/football.jpg" alt="PROJECT NAME" width="84" height="84">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident cumque architecto officiis asperiores perspiciatis culpa voluptatem incidunt magnam praesentium in!</p>
+                                                <h3><small class="fg-color-white">Available Goodies:</small></h3>
+                                                <p class="fg-color-white">Tickets of UEFA Champions League</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <span class="control left"><i class="icon-arrow-left"></i></span>
+                                    <span class="control right"><i class="icon-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile bg-hvytb double double-vertical bg-color-green2">
+                        <a href="#">
+                            <div class="tile-content">
+                                <h2>Create A Project!</h2>
+                                <p class="tile-desc tlc">
+                                    <span class="icon-film page-tileico"><!--FILM ICON--></span>
+                                    <span class="icon-upload page-tileico"><!--UPLOAD ICON--></span>
+                                    <span class="icon-comments-4 page-tileico"><!--COMMENT ICON--></span>
+                                </p>
+                                <p class="tile-desc tile-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta neque sequi ducimus perspiciatis impedit voluptatem sapiente magnam id aperiam nemo. Itaque ad aspernatur tempore voluptatem modi omnis deleniti mollitia minus.</p>
+                                <div class="brand">
+                                    <p class="tile-desc"><span class="icon-arrow-right-3 page-lnkico"><!--ARROW ICON--></span> Go and proceed</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="page-search" class="tile double double-vertical bg-color-green3">
+                        <a href="#">
+                            <div class="tile-content">
+                                <p class="tile-desc tlr"><span class="icon-search page-tileico"><!--HELP ICON--></span></p>
+                                <h2>Search project</h2>
+                                <div class="input-control text tile-desc">
+                                    <input type="text" class="fg-color-darken border-color-white">
+                                    <input type="submit" class="btn-search" value="&#xE041;">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="tile double tile-last double-vertical bg-color-green4">
+                        <div class="tile-content">
+                            <h3>My Account</h3>
+                            <p class="tile-desc tlr"><span class="icon-user-3 page-tileico"><!--BASKET ICON--></span></p>
+                            <div class="input-control text">
+                                <input type="email" name="email" placeholder="Enter your email" class="validate[required,custom[email]] text-input fg-color-darken border-color-white" data-prompt-position="topLeft" />
+                                <button class="helper"></button>
+                            </div>
+                            <div class="input-control password">
+                                <input type="password" placeholder="Enter password" class="fg-color-darken border-color-white" />
+                                <button class="helper"></button>
+                            </div>
+                            <label class="input-control checkbox">
+                                <input type="checkbox">
+                                <span class="helper">Remember Me</span>
+                            </label>
+                            <input type="submit" value="Submit" class="bg-color-grayDark mini" />
+                            <p><a href="#" class="fg-color-white">Create Account</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="#" class="fg-color-white">Find Password</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer page">
+            <div class="nav-bar">
+                <div class="nav-bar-inner padding10">
+                    <span class="element">
+                        2012, Support Your Local Team &copy; All rights Reserved
+                    </span>
+                    <span class="divider"><!--divider--></span>
+                    <ul class="menu">
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li>
+                            <div id="fb-root"></div>
+                            <script>(function(d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (d.getElementById(id)) return;
+                                js = d.createElement(s); js.id = id;
+                                js.src = "//connect.facebook.net/zh_CN/all.js#xfbml=1";
+                                fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));
+                            </script>
+                            <div class="fb-like" data-href="https://www.facebook.com/yourlocalteam" data-send="true" data-width="384" data-show-faces="true" data-font="segoe ui"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

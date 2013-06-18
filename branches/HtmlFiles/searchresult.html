@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>MDEIA.FAR</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/modern.css" rel="stylesheet">
+<link href="css/modern-responsive.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+
+<script type="text/javascript" src="js/modern/multidropdown.js"></script>
+<script type="text/javascript" src="js/modern/buttonset.js"></script>
+<script type="text/javascript" src="js/modern/input-control.js"></script>
+<script type="text/javascript" src="js/modern/pagecontrol.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        var menus = $('.multidropdown'),
+            terms = {
+                region : [],
+                sport : []
+            },
+            condition = $('.page-condbox').detach(),
+            condclone;
+
+        for (var i = 0; i < menus.length; i++) {
+            menus.eq(i).on('click', {category : menus.eq(i).data('category')}, function(event){
+                event.preventDefault();
+                if (event.data.category) {
+                    var cdtn = event.target.tagName.toLowerCase() === 'a' ? $(event.target) : $(event.target).parent('a'),
+                        pos = $.inArray(cdtn.text(), terms[event.data.category]);
+                        ihook = $('<i>', {
+                            'class': 'icon-checkmark fg-color-greenLight'
+                        })
+                    if (pos === -1){
+                        terms[event.data.category].push(cdtn.text());
+                        condclone = condition.clone().attr('rel', cdtn.text()).data('category', event.data.category);
+                        condclone.find('ins').text(event.data.category + ": " + cdtn.text());
+                        condclone.find('a').on('click', function(e){
+                            e.preventDefault();
+                            var relcntn = $(e.target).parents('.page-condbox'),
+                                relcond = relcntn.attr('rel'),
+                                relcata = relcntn.data('category');
+                                relpos = $.inArray(relcond, terms[relcata])
+                                $(this).parent('.page-condbox').remove();
+                                if (relpos !== -1) {
+                                    terms[relcata].splice(relpos, 1);
+                                }
+                                menus.find('i[rel="'+ relcond +'"]').remove();
+                        });
+                        cdtn.append(ihook.attr('rel', cdtn.text()));
+                        $('.page-conditions').append(condclone);
+                    } else {
+                        terms[event.data.category].splice(pos, 1);
+                        cdtn.children('i').remove();
+                        $('.page-conditions').find('[rel="'+ cdtn.text() +'"]').remove();
+                    }
+                    console.dir(terms);
+                } else {
+                    return;
+                }
+            });
+        }
+    });
+</script>
+</head>
+<body>
+    <div class="page">
+        <div class="nav-bar">
+            <div class="nav-bar-inner padding10">
+                <p class="element brand"><a href="#" class="fg-color-white"><span class="icon-home page-homeico"><!--FILM ICON--></span></a></p>
+                <span class="divider"><!--divider--></span>
+                <ul class="menu">
+                    <li><a href="#">Create A Project</a></li>
+                    <li><a href="#">Search Project</a></li>
+                </ul>
+                <ul class="menu fr">
+                    <li data-role="dropdown"><a href="#">Login</a>
+                        <div class="dropdown-menu dropdown-form">
+                                <div class="input-control text">
+                                    <input type="email" name="email" placeholder="Enter your email" class="validate[required,custom[email]] text-input" data-prompt-position="bottomLeft" />
+                                    <button class="helper"></button>
+                                </div>
+                                <div class="input-control password">
+                                    <input type="password" placeholder="Enter password" />
+                                    <button class="helper"></button>
+                                </div>
+                                <label class="input-control checkbox">
+                                    <input type="checkbox">
+                                    <span class="helper">Remember Me</span>
+                                </label>
+                                <input type="submit" value="Submit"/>
+                            <p><a href="#" class="fg-color-blue">Forgot Password?</a></p>
+                        </div>
+                    </li>
+                    <li><a href="#">Regist</a></li>
+                    <li class="page-nav-lang"><a href="#" title="Change Language to English"><img src="images/flag-gb.png" alt="English"></a><a href="#" title="Change Language to German"><img src="images/flag-de.png" alt="German"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="page secondary with-sidebar">
+        <div class="page-header">
+            <div class="page-header-content">
+                <h1>Search Result <small>demo</small></h1>
+                <a class="back-button big page-back" href="/"></a>
+            </div>
+        </div>
+        <div class="page-sidebar">
+            <ul>
+                <li data-role="dropdown" class="sticker sticker-color-pink dropdown active">
+                    <a><i class="icon-list"></i> Projects by Region</a>
+                    <ul class="sub-menu light sidebar-dropdown-menu multidropdown open">
+                        <li data-role="dropdown" class="dropdown active">
+                            <a href="#"><i class="icon-list"></i> Switzerland</a>
+                            <ul class="sub-menu multidropdown sidebar-dropdown-menu" data-category="region">
+                                <li><a href="#">Aargau</a></li>
+                                <li><a href="#">Appenzell Ausserrhoden</a></li>
+                                <li><a href="#">Appenzell Innerrhoden</a></li>
+                                <li><a href="#">Basel-Landschaft</a></li>
+                                <li><a href="#">Basel-Stadt</a></li>
+                                <li><a href="#">Bern</a></li>
+                                <li><a href="#">Fribourg</a></li>
+                                <li><a href="#">Geneva</a></li>
+                                <li><a href="#">Glarus</a></li>
+                                <li><a href="#">Graubünden</a></li>
+                                <li><a href="#">Jura</a></li>
+                                <li><a href="#">Lucerne</a></li>
+                                <li><a href="#">Neuchâtel</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Germany</a></li>
+                        <li><a href="#">France</a></li>
+                        <li><a href="#">Austria</a></li>
+                        <li><a href="#">Italy</a></li>
+                        <li><a href="#">Liechtenstein</a></li>
+                    </ul>
+                </li>
+                <li data-role="dropdown" class="sticker sticker-color-red dropdown active">
+                    <a><i class="icon-list"></i> Projects by Sport</a>
+                    <ul class="sub-menu light multidropdown sidebar-dropdown-menu open" data-category="sport">
+                        <li><a href="#">Footbal</a></li>
+                        <li><a href="#">Basketball‎</a></li>
+                        <li><a href="#">Baseball</a></li>
+                        <li><a href="#">Tennis</a></li>
+                        <li><a href="#">Table tennis</a></li>
+                        <li><a href="#">Golf</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="page-region">
+            <div class="page-region-content">
+                <div class="grid">
+                    <div class="row">
+                        <div class="page-search">
+                            <div class="input-control text span3 fl">
+                                <input type="text" placeholder="Search by keywords" />
+                                <button class="helper"></button>
+                            </div>
+                            <input class="fl bg-color-green5" type="submit" value="Search"/>
+                        </div>
+                        <h3 class="page-search-kw">Results for term <strong>LOREM IPSUM</strong> searched within Projects</h3>
+                        <div class="page-conditions">
+                            <p class="page-condtitle">Search Conditions:</p>
+                            <span class="page-condbox ibk bg-color-orangeDark"><ins class="ibk fg-color-white"></ins><a href="#" class="ibk fg-color-white"><i class="icon-cancel-2"></i></a></span>
+                        </div>
+                        <div class="span9 tlr">Sort by: <a href="#" class="fg-color-orangeDark"><strong>Most Popular</strong></a> | <a href="#">Most Recent</a> | <a href="#">Ending Soonest</a></div>
+                        <div class="page-searchrst">
+                            <div class="tile image bg-color-lighten">
+                                <div class="tile-content">
+                                    <a href=""><img src="images/temp/football.jpg" width="150" height="150" alt="FOOTBALL"></a>
+                                </div>
+                            </div>
+                            <div class="tile triple bg-color-green6">
+                                <div class="tile-content">
+                                    <h2><a href="#" class="fg-color-blueDark">FC Basel needs a team car</a></h2>
+                                    <h5 class="fg-color-blue">Category: <a href="" class="fg-color-blueDark">Football</a></h5>
+                                    <p class="fg-color-grayDark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis reiciendis laborum provident enim vero nesciunt adipisci assumenda explicabo. Repellendus harum quisquam veritatis odio recusandae autem. Temporibus distinctio in quo nulla.</p>
+                                </div>
+                                <div class="brand bg-color-green7">
+                                    <span class="name">Progress: 75% of 100% of the goal</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-searchrst">
+                            <div class="tile image bg-color-lighten">
+                                <div class="tile-content">
+                                    <a href=""><img src="images/temp/football.jpg" width="150" height="150" alt="FOOTBALL"></a>
+                                </div>
+                            </div>
+                            <div class="tile triple bg-color-green6">
+                                <div class="tile-content">
+                                    <h2><a href="#" class="fg-color-blueDark">FC Basel needs a team car</a></h2>
+                                    <h5 class="fg-color-blue">Category: <a href="" class="fg-color-blueDark">Football</a></h5>
+                                    <p class="fg-color-grayDark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis reiciendis laborum provident enim vero nesciunt adipisci assumenda explicabo. Repellendus harum quisquam veritatis odio recusandae autem. Temporibus distinctio in quo nulla.</p>
+                                </div>
+                                <div class="brand bg-color-green7">
+                                    <span class="name">Progress: 75% of 100% of the goal</span>
+                                </div>
+                            </div>
+                        </div><div class="page-searchrst">
+                            <div class="tile image bg-color-lighten">
+                                <div class="tile-content">
+                                    <a href=""><img src="images/temp/football.jpg" width="150" height="150" alt="FOOTBALL"></a>
+                                </div>
+                            </div>
+                            <div class="tile triple bg-color-green6">
+                                <div class="tile-content">
+                                    <h2><a href="#" class="fg-color-blueDark">FC Basel needs a team car</a></h2>
+                                    <h5 class="fg-color-blue">Category: <a href="" class="fg-color-blueDark">Football</a></h5>
+                                    <p class="fg-color-grayDark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis reiciendis laborum provident enim vero nesciunt adipisci assumenda explicabo. Repellendus harum quisquam veritatis odio recusandae autem. Temporibus distinctio in quo nulla.</p>
+                                </div>
+                                <div class="brand bg-color-green7">
+                                    <span class="name">Progress: 75% of 100% of the goal</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pagination tlc">
+                            <ul>
+                                <li class="first"><a></a></li>
+                                <li class="prev"><a></a></li>
+                                <li><a>1</a></li>
+                                <li><a>2</a></li>
+                                <li class="active"><a>3</a></li>
+                                <li class="spaces"><a>...</a></li>
+                                <li class="disabled"><a>4</a></li>
+                                <li><a>500</a></li>
+                                <li class="next"><a></a></li>
+                                <li class="last"><a></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer page">
+        <div class="nav-bar">
+            <div class="nav-bar-inner padding10">
+                <span class="element">
+                    2012, Site Name XYZ &copy; All rights Reserved
+                </span>
+                <span class="divider"><!--divider--></span>
+                <ul class="menu">
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Site map</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

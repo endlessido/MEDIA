@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Index_How_Work" xml:space="preserve">
+    <value>How it works</value>
+  </data>
+  <data name="Index_Login_Forgot" xml:space="preserve">
+    <value>Forgot Password?</value>
+  </data>
+  <data name="Index_Login_MyAccount" xml:space="preserve">
+    <value>My Account</value>
+  </data>
+  <data name="Index_Login_Remember" xml:space="preserve">
+    <value>Remember Me</value>
+  </data>
+  <data name="Index_Project_Create" xml:space="preserve">
+    <value>Create Project</value>
+  </data>
+  <data name="Index_Project_Go" xml:space="preserve">
+    <value>Go and proceed</value>
+  </data>
+  <data name="Index_Project_Goody" xml:space="preserve">
+    <value>Available Goodies</value>
+  </data>
+  <data name="Index_Project_Summary" xml:space="preserve">
+    <value>This page is available, however. Solved or we encounter blocks pleasure wise to follow that no one will open.</value>
+  </data>
+  <data name="Index_Project_Title" xml:space="preserve">
+    <value>Projects of the day</value>
+  </data>
+  <data name="Index_Top_Title" xml:space="preserve">
+    <value>Support Your Local Team</value>
+  </data>
+  <data name="Index_What_Figure" xml:space="preserve">
+    <value>Figure it out</value>
+  </data>
+  <data name="Index_What_Summary" xml:space="preserve">
+    <value>This page is available, however. Solved or we encounter blocks pleasure wise to follow that no one will open.</value>
+  </data>
+  <data name="Index_What_Title" xml:space="preserve">
+    <value>What  is  Support Your Local Team?</value>
+  </data>
+  <data name="Loginout" xml:space="preserve">
+    <value>Login out</value>
+  </data>
+  <data name="myprofile" xml:space="preserve">
+    <value>my profile</value>
+  </data>
+  <data name="SearchProject" xml:space="preserve">
+    <value>Search Project</value>
+  </data>
+  <data name="Search_Country_Title" xml:space="preserve">
+    <value>Projects by Region</value>
+  </data>
+  <data name="Search_Top_Title" xml:space="preserve">
+    <value>Search Result</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Login_Title" xml:space="preserve">
+    <value>Please fill the forms below</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Privacy" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+  <data name="Terms_service" xml:space="preserve">
+    <value>Terms of service</value>
+  </data>
+  <data name="Userlogin" xml:space="preserve">
+    <value>User login</value>
+  </data>
+  <data name="Add_goodie" xml:space="preserve">
+    <value>Add goodie</value>
+  </data>
+  <data name="Add_new_goodie" xml:space="preserve">
+    <value>Add a new goodie</value>
+  </data>
+  <data name="And_Agree" xml:space="preserve">
+    <value>and agree?</value>
+  </data>
+  <data name="Are_you_from" xml:space="preserve">
+    <value>Where are you from?</value>
+  </data>
+  <data name="Canton" xml:space="preserve">
+    <value>Select A Canton</value>
+  </data>
+  <data name="Char_Max" xml:space="preserve">
+    <value>Project Summary (140 characters max)</value>
+  </data>
+  <data name="Days_111" xml:space="preserve">
+    <value>111 days</value>
+  </data>
+  <data name="Days_33" xml:space="preserve">
+    <value>33 days</value>
+  </data>
+  <data name="Days_333" xml:space="preserve">
+    <value>333 days</value>
+  </data>
+  <data name="Days_77" xml:space="preserve">
+    <value>77 days</value>
+  </data>
+  <data name="Days_99" xml:space="preserve">
+    <value>99 days</value>
+  </data>
+  <data name="Desc_goodie" xml:space="preserve">
+    <value>Description of your goodies:</value>
+  </data>
+  <data name="Do_You_Need" xml:space="preserve">
+    <value>What do you need?</value>
+  </data>
+  <data name="FaceBookPage" xml:space="preserve">
+    <value>Your facebook page?</value>
+  </data>
+  <data name="FieldsWith" xml:space="preserve">
+    <value>Questionnaire, fields with</value>
+  </data>
+  <data name="FoundProject" xml:space="preserve">
+    <value>Found a Project in 2 Steps</value>
+  </data>
+  <data name="Have_You_Read" xml:space="preserve">
+    <value>Have you read the</value>
+  </data>
+  <data name="How_Long" xml:space="preserve">
+    <value>How long the donation will last?</value>
+  </data>
+  <data name="How_Much" xml:space="preserve">
+    <value>How much the donation will collect?</value>
+  </data>
+  <data name="How_much_donate" xml:space="preserve">
+    <value>How much the donor have to donate to get it:</value>
+  </data>
+  <data name="Introduce" xml:space="preserve">
+    <value>Who are you?</value>
+  </data>
+  <data name="Name_goodie" xml:space="preserve">
+    <value>Name of your goodie:</value>
+  </data>
+  <data name="Name_Of_Project" xml:space="preserve">
+    <value>Name of the project?</value>
+  </data>
+  <data name="Need_Reason" xml:space="preserve">
+    <value>What is your project?</value>
+  </data>
+  <data name="NewsLetter" xml:space="preserve">
+    <value>Yes, please send me newsletter.</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Number_goodie" xml:space="preserve">
+    <value>Number of goodies you will present:</value>
+  </data>
+  <data name="ProjectCategory" xml:space="preserve">
+    <value>Project Category</value>
+  </data>
+  <data name="Questionnaire" xml:space="preserve">
+    <value>Questionnaire</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>all required</value>
+  </data>
+  <data name="Select_Canton" xml:space="preserve">
+    <value>Select A Canton</value>
+  </data>
+  <data name="Select_Category" xml:space="preserve">
+    <value>Select Category</value>
+  </data>
+  <data name="Select_Country" xml:space="preserve">
+    <value>Select Country</value>
+  </data>
+  <data name="Terms_Of_Service" xml:space="preserve">
+    <value>terms of service</value>
+  </data>
+  <data name="Unlimited" xml:space="preserve">
+    <value>Unlimited</value>
+  </data>
+  <data name="Upload_Image" xml:space="preserve">
+    <value>Upload a image for your project</value>
+  </data>
+  <data name="Vision" xml:space="preserve">
+    <value>What's your vision?</value>
+  </data>
+  <data name="WebPage" xml:space="preserve">
+    <value>Your webpage?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="YoutubeLink" xml:space="preserve">
+    <value>Youtube link</value>
+  </data>
+  <data name="abondon" xml:space="preserve">
+    <value>Do you want to donate anonymously and abondon the goodie? (no login account needed)</value>
+  </data>
+  <data name="Account_Login" xml:space="preserve">
+    <value>Account Login</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Birthday" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+  <data name="BySport" xml:space="preserve">
+    <value>Projects by Sport</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="Donate" xml:space="preserve">
+    <value>Donate</value>
+  </data>
+  <data name="Donate_Form" xml:space="preserve">
+    <value>Donate Form</value>
+  </data>
+  <data name="Ending_Soonest" xml:space="preserve">
+    <value>Ending Soonest</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="First_name" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="Founder_log" xml:space="preserve">
+    <value>Founder's Log</value>
+  </data>
+  <data name="Fun_info" xml:space="preserve">
+    <value>Funding Information</value>
+  </data>
+  <data name="F_Info" xml:space="preserve">
+    <value>Founder information</value>
+  </data>
+  <data name="F_name" xml:space="preserve">
+    <value>Founder Name</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="GetEmail" xml:space="preserve">
+    <value>You'll get an email with a link to confirm your email address</value>
+  </data>
+  <data name="had_donated" xml:space="preserve">
+    <value>had dontated to this project, THANK YOU!</value>
+  </data>
+  <data name="Last_name" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="Most_Recent" xml:space="preserve">
+    <value>Most Recent</value>
+  </data>
+  <data name="much_give" xml:space="preserve">
+    <value>How much do you like to give?</value>
+  </data>
+  <data name="NewAccount" xml:space="preserve">
+    <value>Create a new account</value>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>Progress</value>
+  </data>
+  <data name="pro_desc" xml:space="preserve">
+    <value>Project Description</value>
+  </data>
+  <data name="Regist" xml:space="preserve">
+    <value>Regist</value>
+  </data>
+  <data name="Remain_Goal" xml:space="preserve">
+    <value>Remaining</value>
+  </data>
+  <data name="RepPassword" xml:space="preserve">
+    <value>Repeat Password</value>
+  </data>
+  <data name="Resources" xml:space="preserve">
+    <value>Resources</value>
+  </data>
+  <data name="Result_Term" xml:space="preserve">
+    <value>Results for term</value>
+  </data>
+  <data name="search_with_project" xml:space="preserve">
+    <value>searched within Projects</value>
+  </data>
+  <data name="Sortby" xml:space="preserve">
+    <value>Sort by:</value>
+  </data>
+  <data name="supporters" xml:space="preserve">
+    <value>supporters</value>
+  </data>
+  <data name="Total_Date" xml:space="preserve">
+    <value>Earned</value>
+  </data>
+  <data name="Total_Goal" xml:space="preserve">
+    <value>Goal</value>
+  </data>
+  <data name="Town" xml:space="preserve">
+    <value>Town</value>
+  </data>
+  <data name="VIA" xml:space="preserve">
+    <value>Via escrow</value>
+  </data>
+  <data name="want_goodie" xml:space="preserve">
+    <value>I want this goodie</value>
+  </data>
+  <data name="What_need" xml:space="preserve">
+    <value>What need</value>
+  </data>
+  <data name="What_our_vision" xml:space="preserve">
+    <value>What's our vision?</value>
+  </data>
+  <data name="Which_method" xml:space="preserve">
+    <value>Which method do you prefer?</value>
+  </data>
+  <data name="Who_are_we" xml:space="preserve">
+    <value>Who are we?</value>
+  </data>
+  <data name="Why_do_we" xml:space="preserve">
+    <value>Why do we need that?</value>
+  </data>
+  <data name="ZIP" xml:space="preserve">
+    <value>ZIP</value>
+  </data>
+  <data name="Change_pwd" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="Edit_Account" xml:space="preserve">
+    <value>Edit My Account</value>
+  </data>
+  <data name="Genernal_info" xml:space="preserve">
+    <value>General information</value>
+  </data>
+  <data name="MyDonatedProc" xml:space="preserve">
+    <value>My Donated Projects</value>
+  </data>
+  <data name="MyProc" xml:space="preserve">
+    <value>My Funded Projects</value>
+  </data>
+  <data name="My_Account" xml:space="preserve">
+    <value>My Account</value>
+  </data>
+  <data name="NiceSee" xml:space="preserve">
+    <value>Nice to see you here!</value>
+  </data>
+  <data name="Old_pwd" xml:space="preserve">
+    <value>Old Password</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="Please_SendEmail" xml:space="preserve">
+    <value>Please fill the forms below to send a email to us.</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="Alter_activeaccount" xml:space="preserve">
+    <value>Please login your email to active the new account</value>
+  </data>
+  <data name="Alter_checkpwd" xml:space="preserve">
+    <value>Please login your email to check the password</value>
+  </data>
+  <data name="Alter_emailwrong" xml:space="preserve">
+    <value>Emaill address is wrong</value>
+  </data>
+  <data name="Alter_feedback" xml:space="preserve">
+    <value>Send Success, We will feedback as soon as possible</value>
+  </data>
+  <data name="Alter_gologin" xml:space="preserve">
+    <value>Active Success,You can go login now!</value>
+  </data>
+  <data name="Alter_registfailed" xml:space="preserve">
+    <value>regist failed</value>
+  </data>
+  <data name="Alter_servercancled" xml:space="preserve">
+    <value>The server cancled email,Please try again after!</value>
+  </data>
+  <data name="Alter_tryagain" xml:space="preserve">
+    <value>Error,Please try again!</value>
+  </data>
+  <data name="ForgetPwd" xml:space="preserve">
+    <value>we will send the password to your mailbox</value>
+  </data>
+  <data name="Alter_Pwdwrong" xml:space="preserve">
+    <value>Password is wrong</value>
+  </data>
+  <data name="Myorder" xml:space="preserve">
+    <value>my order</value>
+  </data>
+</root>

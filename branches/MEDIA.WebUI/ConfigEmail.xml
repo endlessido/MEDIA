@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EmailConfig>
+  <ActiveEmail Title="Mail Verification" Content="hi {1},  &#xD;{0}  welcome to our web site.&#xD;&#xA;please click this URL to active  new account &#xD;&#xA;{2}&#xD;&#xA;thanks&#xA;" />
+  <ForgetPwdEmail Title="Forget you password" Content="hi {0}, &#xD;&#xA;your password is {1}. &#xD;&#xA;please remember clear.&#xD;&#xA;you can user this password to login {2}" />
+</EmailConfig>

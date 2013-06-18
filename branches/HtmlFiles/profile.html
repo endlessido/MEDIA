@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>MDEIA.FAR</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/modern.css" rel="stylesheet">
+<link href="css/modern-responsive.css" rel="stylesheet">
+<link href="css/validationEngine.jquery.css" rel="stylesheet">
+<link href="css/pikaday.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+
+<script type="text/javascript" src="js/modern/dropdown.js"></script>
+<script type="text/javascript" src="js/modern/buttonset.js"></script>
+<script type="text/javascript" src="js/modern/input-control.js"></script>
+<script type="text/javascript" src="js/modern/pagecontrol.js"></script>
+<script type="text/javascript" src="js/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="js/languages/jquery.validationEngine-en.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('#page-forms').validationEngine();
+        $('.bg-hv').each(function(){
+            var _tile = $(this),
+                imgbg = _tile.data().imgbg;
+
+            if ( imgbg ){
+                _tile.on('mouseenter', function(){
+                    _tile.css({
+                        'background-image': 'url(' + imgbg + ')'
+                    });
+                }).on('mouseleave', function(){
+                    _tile.css({
+                        'background-image': 'none'
+                    });
+                })
+            }
+        });
+        $('.pwremover > i').on('click', function(event){
+            event.preventDefault();
+            pwtmpl.after(pwbtn).detach();
+        });
+        var pwtmpl = $('#page-chgpw').detach(),
+            pwbtn;
+        $('#changepw').on('click', function(event){
+            event.preventDefault();
+            pwbtn = $(this).parent().before(pwtmpl).detach();
+            console.log(pwbtn);
+        });
+    });
+</script>
+</head>
+<body>
+    <form action="" id="page-forms">
+        <div class="page">
+            <div class="nav-bar">
+                <div class="nav-bar-inner padding10">
+                    <p class="element brand"><a href="#" class="fg-color-white"><span class="icon-home page-homeico"><!--FILM ICON--></span></a></p>
+                    <span class="divider"><!--divider--></span>
+                    <ul class="menu">
+                        <li><a href="#">How this site works</a></li>
+                        <li><a href="#">Fundraising</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                    </ul>
+                    <ul class="menu fr">
+                        <li data-role="dropdown">
+                            <a href="#">Welcome, Username!</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">my profile</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Logout</a></li>
+                        <li class="page-nav-lang"><a href="#" title="Change Language to English"><img src="images/flag-gb.png" alt="English"></a><a href="#" title="Change Language to German"><img src="images/flag-de.png" alt="German"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page secondary with-sidebar">
+            <div class="page-header">
+                <div class="page-header-content">
+                    <h1>My Account<small>&nbsp;</small></h1>
+                    <a class="back-button big page-back" href="/"></a>
+                </div>
+            </div>
+            <div class="page-sidebar">
+                <div class="page-sidebox">
+                    <h2><span class="fg-color-pink">Hi Frodo,</span><br><small>Nice to see you here!</small></h2>
+                </div>
+            </div>
+            <div class="page-region">
+                <div class="page-region-content">
+                    <div class="page-control" data-role="page-control">
+                    <ul>
+                        <li class="active"><a href="#frame1">My Founded Projects</a></li>
+                        <li><a href="#frame2">My Donated Projects</a></li>
+                        <li><a href="#frame3">Edit My Account</a></li>
+                    </ul>
+                    <div class="frames">
+                        <div class="frame active" id="frame1">
+                            <div class="clearfix">
+                                <div class="tile bg-color-green bg-hv" data-imgbg="images/temp/football.jpg">
+                                    <div class="tile-content">
+                                        <h4>Project XYZ</h4>
+                                        <br>
+                                        <p>This is a short description.</p>
+                                    </div>
+                                    <div class="brand">
+                                        <span class="name">Progress</span>
+                                        <span class="badge">755%</span>
+                                    </div>
+                                </div>
+                                <div class="tile bg-color-blue bg-hv">
+                                    <div class="tile-content">
+                                        <h4>Project ZZZ</h4>
+                                        <br>
+                                        <p>This is a short description.</p>
+                                    </div>
+                                    <div class="brand">
+                                        <span class="name">Progress</span>
+                                        <span class="badge">3%</span>
+                                    </div>
+                                </div>
+                                <div class="tile bg-color-orange bg-hv" data-imgbg="images/temp/football3.jpg">
+                                    <div class="tile-content">
+                                        <h4>Project ABC</h4>
+                                        <br>
+                                        <p>This is a short description.</p>
+                                    </div>
+                                    <div class="brand">
+                                        <span class="name">Progress</span>
+                                        <span class="badge">55%</span>
+                                    </div>
+                                </div>
+                                <div class="tile bg-color-purple bg-hv" data-imgbg="images/temp/football4.jpg">
+                                    <div class="tile-content">
+                                        <h4>Project 123</h4>
+                                        <br>
+                                        <p>This is a short description.</p>
+                                    </div>
+                                    <div class="brand">
+                                        <span class="name">Progress</span>
+                                        <span class="badge">60%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="frame" id="frame2">
+                            <div class="clearfix">
+                                <div class="tile bg-color-green">
+                                    <div class="tile-content">
+                                        <h4>Project XYZ</h4>
+                                        <br>
+                                        <p>This is a short description.</p>
+                                    </div>
+                                    <div class="brand">
+                                        <span class="name">Sum(CHF)</span>
+                                        <span class="badge">100</span>
+                                    </div>
+                                </div>
+                                <div class="tile bg-color-blue">
+                                    <div class="tile-content">
+                                        <h4>Project ZZZ</h4>
+                                        <br>
+                                        <p>This is a short description.</p>
+                                    </div>
+                                    <div class="brand">
+                                        <span class="name">Sum(CHF)</span>
+                                        <span class="badge">150</span>
+                                    </div>
+                                </div>
+                                <div class="tile bg-color-orange">
+                                    <div class="tile-content">
+                                        <h4>Project ABC</h4>
+                                        <br>
+                                        <p>This is a short description.</p>
+                                    </div>
+                                    <div class="brand">
+                                        <span class="name">Sum(CHF)</span>
+                                        <span class="badge">500</span>
+                                    </div>
+                                </div>
+                                <div class="tile bg-color-purple">
+                                    <div class="tile-content">
+                                        <h4>Project 123</h4>
+                                        <br>
+                                        <p>This is a short description.</p>
+                                    </div>
+                                    <div class="brand">
+                                        <span class="name">Sum(CHF)</span>
+                                        <span class="badge">20</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="frame" id="frame3">
+                            <div class="grid">
+                                <div class="row">
+                                    <fieldset>
+                                        <legend class="fg-color-blueDark">General information</legend>
+                                        <p class="fg-color-greenDark">First name</p>
+                                        <div class="input-control text span6 as-block">
+                                            <input type="text" autocomplete="off" placeholder="Enter your first name." class="validate[required]" />
+                                            <button class="helper"></button>
+                                        </div>
+                                        <p class="fg-color-greenDark">Last name</p>
+                                        <div class="input-control text span6 as-block">
+                                            <input type="text" autocomplete="off" placeholder="Enter your last name." class="validate[required]" />
+                                            <button class="helper"></button>
+                                        </div>
+                                        <p class="fg-color-greenDark">Address</p>
+                                        <div class="input-control text span6 as-block">
+                                            <input type="text" autocomplete="off" placeholder="Enter your address." class="validate[required]" />
+                                            <button class="helper"></button>
+                                        </div>
+                                        <div class="span8 as-block">
+                                            <div class="span3">
+                                                <p class="fg-color-greenDark">ZIP<span class="fg-color-red">*</span></p>
+                                                <div class="input-control text span3 as-block">
+                                                    <input type="text" autocomplete="off" placeholder="Enter ZIP" class="validate[required]" />
+                                                    <button class="helper"></button>
+                                                </div>
+                                            </div>
+                                            <div class="span3">
+                                                <p class="fg-color-greenDark">Town<span class="fg-color-red">*</span></p>
+                                                <div class="input-control text span3 as-block">
+                                                    <input type="text" autocomplete="off" placeholder="Enter Town" class="validate[required]" />
+                                                    <button class="helper"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="fg-color-greenDark">Country <span class="fg-color-red">*</span></p>
+                                        <div class="input-control select span6 as-block">
+                                            <select class="validate[required]" name="region">
+                                                <option value="">Select Country</option>
+                                                <option value="0">Switzerland</option>
+                                                <option value="1">Germany</option>
+                                            </select>
+                                        </div>
+                                        <p class="fg-color-greenDark">Birthday <span class="fg-color-red">*</span></p>
+                                        <div class="as-block span8 page-reg-birthday">
+                                            <div class="input-control text span1">
+                                                <input type="text" maxlength="2" class="validate[required,custom[integer],min[1],max[31]]" autocomplete="off" placeholder="Enter date" />
+                                                <button class="helper"></button>
+                                            </div>
+                                            <span class="fl">-</span>
+                                            <div class="input-control text span1">
+                                                <input type="text" maxlength="2" class="validate[required,custom[integer],min[1],max[12]]" autocomplete="off" placeholder="Enter month" />
+                                                <button class="helper"></button>
+                                            </div>
+                                            <span class="fl">-</span>
+                                            <div class="input-control text span2">
+                                                <input type="text" maxlength="4" class="validate[required,custom[integer],min[1900]]" autocomplete="off" placeholder="Enter year" />
+                                                <button class="helper"></button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset id="page-chgpw">
+                                        <legend class="fg-color-blueDark">Change password</legend>
+                                        <p class="fg-color-greenDark tlr"><span class="fl">Old Password</span><a href="#" class="pwremover fg-color-red" title="Cancel password editing"><i class="icon-cancel-2"></i></a></p>
+                                        <div class="input-control password span4 as-block">
+                                            <input type="password" autocomplete="off" placeholder="Enter old password." class="validate[required]" />
+                                            <button class="helper"></button>
+                                        </div>
+                                        <p class="fg-color-greenDark">New Password</p>
+                                        <div class="input-control password span4 as-block">
+                                            <input type="password" autocomplete="off" placeholder="Enter password." id="password" class="validate[required]" />
+                                            <button class="helper"></button>
+                                        </div>
+                                        <p class="fg-color-greenDark">Repeat New Password</p>
+                                        <div class="input-control password span4 as-block">
+                                            <input type="password" autocomplete="off" placeholder="Enter password again." class="validate[required,equals[password]]" />
+                                            <button class="helper"></button>
+                                        </div>
+                                    </fieldset>
+                                    <p class="page-prf-pwc"><a href="#" id="changepw">Change password</a></p><br>
+                                    <p class="tlc"><input type="submit" value="Save Changes"/></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer page">
+            <div class="nav-bar">
+                <div class="nav-bar-inner padding10">
+                    <span class="element">
+                        2012, Site Name XYZ &copy; All rights Reserved
+                    </span>
+                    <span class="divider"><!--divider--></span>
+                    <ul class="menu">
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Site map</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

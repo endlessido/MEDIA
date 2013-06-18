@@ -1,0 +1,194 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"  CodeBehind="Index.master.cs" Inherits="MEDIA.WebUI.share.Index" %><!DOCTYPE html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>MDEIA.FAR</title>
+    <link href="css/modern.css" rel="stylesheet">
+    <link href="css/modern-responsive.css" rel="stylesheet">
+    <link href="css/validationEngine.jquery.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/pikaday.css" rel="stylesheet">
+    <link href="css/jquery.share.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/modern/multidropdown.js"></script>  
+    <script type="text/javascript" src="js/modern/accordion.js"></script>
+    <script type="text/javascript" src="js/modern/buttonset.js"></script>
+    <script type="text/javascript" src="js/modern/carousel.js"></script>
+    <script type="text/javascript" src="js/modern/input-control.js"></script>
+    <script type="text/javascript" src="js/modern/rating.js"></script>
+    <script type="text/javascript" src="js/modern/pagecontrol.js"></script>
+    <script type="text/javascript" src="js/modern/slider.js"></script>
+    <script type="text/javascript" src="js/modern/tile-slider.js"></script>
+    <script type="text/javascript" src="js/modern/tile-drag.js"></script>
+    <script type="text/javascript" src="js/modern/dialog.js"></script>
+    <script type="text/javascript" src="js/jquery.validationEngine.js"></script>
+    <script type="text/javascript" src="js/languages/jquery.validationEngine-en.js"></script>
+    <script type="text/javascript" src="swfobject/swfobject.js"></script>
+    <script type="text/javascript" src="js/jquery.share.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $('#form1').validationEngine();
+            $('.back-button').on('click', function (event) {
+                var ff = $(this).attr("href");
+                if (ff == "/") {
+                event.preventDefault();
+                    var strUrl = '<%= PreviousURL %>';
+                    if (strUrl != "") {
+                        window.location.href = strUrl;
+                    }
+                    else {
+                        window.location.href = "Index.aspx";
+                    }
+                }
+            });
+            var language = getCookie("my_Language");
+            if (language != undefined) {
+                jQuery('#a_language')[0].innerHTML = "<img src='images/" + language + ".png'>";
+            }
+        });
+
+        function getCookie(objName) {
+            var arrStr = document.cookie.split("; ");
+            for (var i = 0; i < arrStr.length; i++) {
+                var temp = arrStr[i].split("=");
+                if (temp[0] == objName) return unescape(temp[1]);
+            }
+        }
+
+        function showWaitDialog() {
+            $.Dialog({
+                'title': 'Loading',
+                'content': 'Please wait....<img src="images/preloader-w8-line-black.gif" height="8" />',
+                'closeButton': false,
+                'buttons': {}
+            });
+        }
+
+        function showDialog(msgType, msgContent, url) {
+            $.Dialog({
+                'title': msgType,
+                'content': msgContent,
+                'buttons': {
+                    'OK': {
+                        'action': function () {
+                            if (url != null && url != "") {
+                                window.location.href = url;
+                            }
+                        }
+                    }
+                }
+            });
+        };
+    </script>
+     <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+   <form id="form1"  method="post" >
+     <div class="page">
+            <div class="nav-bar">
+                <div class="nav-bar-inner padding10">
+                    <p class="element brand"><a href="Index.aspx" title="Home" class="fg-color-white ico-home">&#xE000;</a></p>
+                    <span class="divider"><!--divider--></span>
+                    <ul class="menu">
+                        <li><a href="CreateProject.aspx"><asp:Localize ID="Localize10" runat="server" Text="<%$ Resources:Resource, Index_Project_Create %>" /></a></li>
+                        <li><a href="ProjectList.aspx"><asp:Localize ID="Localize1" runat="server" Text="<%$ Resources:Resource, SearchProject %>" /></a></li>
+                    </ul>
+                    <ul class="menu fr">
+                        <% if (isLogin) { %>
+                           <li data-role="dropdown">
+                            <a href="#"><asp:Label runat="server" ID="lblTotalCount" CssClass="label warning"></asp:Label> Notices</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="MyProfile.aspx?frame=1"><i class="icon-gift-2"></i> <span class="label warning"><asp:Label runat="server" ID="lblDonateProject"></asp:Label></span> Donated Projects</a></li>
+                                <li><a href="MyProfile.aspx?frame=0"><i class="icon-chart-alt"></i> <span class="label warning"><asp:Label runat="server" ID="lblPublishProject"></asp:Label></span> Published Projects</a></li>
+                                <li><a href="MyOrder.aspx?type=0"><i class="icon-credit-card"></i> <span class="label warning"><asp:Label runat="server" ID="lblUnpayOrder"></asp:Label></span> Unpayed Orders</a></li>
+                                <li><a href="MyOrder.aspx?type=1"><i class="icon-credit-card"></i> <span class="label warning"><asp:Label runat="server" ID="lblPayOrder"></asp:Label></span> Payed Orders</a></li>
+                                <li><a href="MyOrder.aspx?type=2"><i class="icon-credit-card"></i> <span class="label warning"><asp:Label runat="server" ID="lblReceiveOrder"></asp:Label></span> Received Orders</a></li>
+                            </ul>
+                        </li>
+                         <%  } %>
+                        <li data-role="dropdown"><a href="#"><asp:Label ID="lblName" runat="server" ></asp:Label></a>
+                            <% if (!isLogin)
+                               { %>
+                            <div class="dropdown-menu dropdown-form">
+                                    <div class="input-control text">
+                                        <input type="email"  tabindex="111" value="<%=userName %>" name="email" placeholder="Enter your email" class="validate[required,custom[email]]" data-prompt-position="topRight" />
+                                        <button class="helper"></button>
+                                    </div>
+                                    <div class="input-control password">
+                                        <input type="password" autocomplete="off" tabindex="112" name="password" placeholder="Enter password" class="validate[required]" data-prompt-position="bottomRight" />
+                                        <button class="helper"></button>
+                                    </div>
+                                    <label class="input-control checkbox">
+                                        <input type="checkbox" checked="checked" name="ChkMasterRemember">
+                                        <span class="helper"><asp:Localize ID="Localize2" runat="server" Text="<%$ Resources:Resource, Index_Login_Remember %>" /></span>
+                                    </label>
+                                    <input type="submit" class="bg-color-green5" value="submit" />
+                                <p><a href="ForgetPassword.aspx" class="fg-color-blue"><asp:Localize ID="Localize3" runat="server" Text="<%$ Resources:Resource, Index_Login_Forgot %>" /></a></p>
+                            </div>
+                            <% } %>
+                             <% else 
+                               { %>
+                                <ul class="dropdown-menu">
+                                    <li><a href="MyProfile.aspx?frame=2"><asp:Localize ID="Localize5" runat="server" Text="<%$ Resources:Resource, myprofile %>" /></a></li>
+                                </ul>
+                             <% } %>
+                        </li>
+                        <% if (!isLogin)
+                           {%>
+                        <li><a href="UserRegist.aspx"><asp:Localize ID="Localize12" runat="server" Text="<%$ Resources:Resource, Regist %>" /></a></li>
+                        <% } %>
+                        <% else
+                           { %>
+                           <li><a href="LoginOut.aspx"><asp:Localize ID="Localize4" runat="server" Text="<%$ Resources:Resource, Loginout %>" /></a></li>
+                           <%} %>
+                            <li data-role="dropdown">
+                            <a href="#" id="a_language">Language</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="?lan=en-US"><img src="images/en-US.png" alt="English"> English</a></li>
+                                <li><a href="?lan=de-DE"><img src="images/de-DE.png" alt="German"> German</a></li>
+                            </ul>
+                        </li>
+                        <li class="page-nav-lang"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>  
+         </form>
+    <div id="ContentPlaceHolder1_div">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+     <div class="footer page">
+            <div class="nav-bar">
+                <div class="nav-bar-inner padding10">
+                    <span class="element">
+                        2012, Site Name XYZ &copy; All rights Reserved
+                    </span>
+                    <span class="divider"><!--divider--></span>
+                    <ul class="menu">
+                        <li><a href="Terms.aspx" target="_blank"><asp:Localize ID="Localize7" runat="server" Text="<%$ Resources:Resource, Terms_service %>" /></a></li>
+                        <li><a href="Contact.aspx"><asp:Localize ID="Localize6" runat="server" Text="<%$ Resources:Resource, Contact %>" /></a></li>
+                        <li><a href="#"><asp:Localize ID="Localize11" runat="server" Text="<%$ Resources:Resource, Help %>" /></a></li>
+                         <li>
+                                            <div id="fb-root"></div>
+<script type="text/javascript">    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));</script>
+                            <fb:like send="true" href="https://www.facebook.com/yourlocalteam" layout="button_count" width="450" show_faces="false"></fb:like>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

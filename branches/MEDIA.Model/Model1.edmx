@@ -1,0 +1,1424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MediaSystemModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MediaSystemModelStoreContainer">
+          <EntitySet Name="Administrator" EntityType="MediaSystemModel.Store.Administrator" store:Type="Tables" Schema="WacylAzzouz" />
+          <EntitySet Name="Area" EntityType="MediaSystemModel.Store.Area" store:Type="Tables" Schema="WacylAzzouz" />
+          <EntitySet Name="Blog" EntityType="MediaSystemModel.Store.Blog" store:Type="Tables" Schema="WacylAzzouz" />
+          <EntitySet Name="Country" EntityType="MediaSystemModel.Store.Country" store:Type="Tables" Schema="WacylAzzouz" />
+          <EntitySet Name="DonateRecord" EntityType="MediaSystemModel.Store.DonateRecord" store:Type="Tables" Schema="WacylAzzouz" />
+          <EntitySet Name="DonationProject" EntityType="MediaSystemModel.Store.DonationProject" store:Type="Tables" Schema="WacylAzzouz" />
+          <EntitySet Name="Goodies" EntityType="MediaSystemModel.Store.Goodies" store:Type="Tables" Schema="WacylAzzouz" />
+          <EntitySet Name="OrderDetails" EntityType="MediaSystemModel.Store.OrderDetails" store:Type="Tables" Schema="WacylAzzouz" />
+          <EntitySet Name="OrderInfo" EntityType="MediaSystemModel.Store.OrderInfo" store:Type="Tables" Schema="WacylAzzouz" />
+          <EntitySet Name="Product" EntityType="MediaSystemModel.Store.Product" store:Type="Tables" Schema="WacylAzzouz" />
+          <EntitySet Name="ProductClass" EntityType="MediaSystemModel.Store.ProductClass" store:Type="Tables" Schema="WacylAzzouz" />
+          <EntitySet Name="ProductInventory" EntityType="MediaSystemModel.Store.ProductInventory" store:Type="Tables" Schema="WacylAzzouz" />
+          <EntitySet Name="ShopCar" EntityType="MediaSystemModel.Store.ShopCar" store:Type="Tables" Schema="WacylAzzouz" />
+          <EntitySet Name="SportCategory" EntityType="MediaSystemModel.Store.SportCategory" store:Type="Tables" Schema="WacylAzzouz" />
+          <EntitySet Name="User" EntityType="MediaSystemModel.Store.User" store:Type="Tables" Schema="WacylAzzouz" />
+          <AssociationSet Name="FK_AREA_REFERENCE_COUNTRY" Association="MediaSystemModel.Store.FK_AREA_REFERENCE_COUNTRY">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Area" EntitySet="Area" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BLOG_REFERENCE_DONATION" Association="MediaSystemModel.Store.FK_BLOG_REFERENCE_DONATION">
+            <End Role="DonationProject" EntitySet="DonationProject" />
+            <End Role="Blog" EntitySet="Blog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONATERE_REFERENCE_GOODIES" Association="MediaSystemModel.Store.FK_DONATERE_REFERENCE_GOODIES">
+            <End Role="Goodies" EntitySet="Goodies" />
+            <End Role="DonateRecord" EntitySet="DonateRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONATERE_REFERENCE_ORDERINF" Association="MediaSystemModel.Store.FK_DONATERE_REFERENCE_ORDERINF">
+            <End Role="OrderInfo" EntitySet="OrderInfo" />
+            <End Role="DonateRecord" EntitySet="DonateRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONATERE_REFERENCE_USER" Association="MediaSystemModel.Store.FK_DONATERE_REFERENCE_USER">
+            <End Role="User" EntitySet="User" />
+            <End Role="DonateRecord" EntitySet="DonateRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonateRecord_REFERENCE_DONATION" Association="MediaSystemModel.Store.FK_DonateRecord_REFERENCE_DONATION">
+            <End Role="DonationProject" EntitySet="DonationProject" />
+            <End Role="DonateRecord" EntitySet="DonateRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONATION_REFERENCE_ADMINIST" Association="MediaSystemModel.Store.FK_DONATION_REFERENCE_ADMINIST">
+            <End Role="Administrator" EntitySet="Administrator" />
+            <End Role="DonationProject" EntitySet="DonationProject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONATION_REFERENCE_AREA" Association="MediaSystemModel.Store.FK_DONATION_REFERENCE_AREA">
+            <End Role="Area" EntitySet="Area" />
+            <End Role="DonationProject" EntitySet="DonationProject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONATION_REFERENCE_SPORTCAT" Association="MediaSystemModel.Store.FK_DONATION_REFERENCE_SPORTCAT">
+            <End Role="SportCategory" EntitySet="SportCategory" />
+            <End Role="DonationProject" EntitySet="DonationProject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONATION_REFERENCE_USER" Association="MediaSystemModel.Store.FK_DONATION_REFERENCE_USER">
+            <End Role="User" EntitySet="User" />
+            <End Role="DonationProject" EntitySet="DonationProject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GOODIES_REFERENCE_DONATION" Association="MediaSystemModel.Store.FK_GOODIES_REFERENCE_DONATION">
+            <End Role="DonationProject" EntitySet="DonationProject" />
+            <End Role="Goodies" EntitySet="Goodies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDERDET_REFERENCE_ORDERINF" Association="MediaSystemModel.Store.FK_ORDERDET_REFERENCE_ORDERINF">
+            <End Role="OrderInfo" EntitySet="OrderInfo" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDERDET_REFERENCE_PRODUCT" Association="MediaSystemModel.Store.FK_ORDERDET_REFERENCE_PRODUCT">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDERINF_REFERENCE_USER" Association="MediaSystemModel.Store.FK_ORDERINF_REFERENCE_USER">
+            <End Role="User" EntitySet="User" />
+            <End Role="OrderInfo" EntitySet="OrderInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCT_REFERENCE_PRODUCTC" Association="MediaSystemModel.Store.FK_PRODUCT_REFERENCE_PRODUCTC">
+            <End Role="ProductClass" EntitySet="ProductClass" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCTI_REFERENCE_PRODUCT" Association="MediaSystemModel.Store.FK_PRODUCTI_REFERENCE_PRODUCT">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductInventory" EntitySet="ProductInventory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SHOPCAR_REFERENCE_PRODUCT" Association="MediaSystemModel.Store.FK_SHOPCAR_REFERENCE_PRODUCT">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ShopCar" EntitySet="ShopCar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_REFERENCE_COUNTRY" Association="MediaSystemModel.Store.FK_USER_REFERENCE_COUNTRY">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Administrator">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AdminName" Type="varchar" MaxLength="100" />
+          <Property Name="AdminPwd" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="AreaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CountryId" Type="int" />
+          <Property Name="AreaName" Type="varchar" MaxLength="500" />
+          <Property Name="IsDel" Type="bit" />
+        </EntityType>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="blogId" />
+          </Key>
+          <Property Name="blogId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectId" Type="int" />
+          <Property Name="Title" Type="varchar" MaxLength="400" />
+          <Property Name="Content" Type="varchar(max)" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ImgUrl" Type="varchar" MaxLength="100" />
+          <Property Name="IsCheck" Type="bit" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="varchar" MaxLength="500" />
+          <Property Name="IsDel" Type="bit" />
+        </EntityType>
+        <EntityType Name="DonateRecord">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="Id" Type="int" />
+          <Property Name="DonateFunding" Type="decimal" />
+          <Property Name="DonateDate" Type="datetime" />
+          <Property Name="IsPayment" Type="bit" />
+          <Property Name="CurrencyStr" Type="varchar" MaxLength="10" />
+          <Property Name="OrderId" Type="varchar" MaxLength="50" />
+          <Property Name="ProjectId" Type="int" />
+        </EntityType>
+        <EntityType Name="DonationProject">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AdminId" Type="smallint" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="AreaId" Type="int" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="ProjectName" Type="varchar" MaxLength="200" />
+          <Property Name="YoutubeUrl" Type="varchar" MaxLength="100" />
+          <Property Name="ProjectSummary" Type="varchar" MaxLength="500" />
+          <Property Name="Need" Type="varchar" MaxLength="500" />
+          <Property Name="NeedReason" Type="varchar" MaxLength="500" />
+          <Property Name="CountryName" Type="varchar" MaxLength="100" />
+          <Property Name="AreaName" Type="varchar" MaxLength="100" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="100" />
+          <Property Name="SelfIntroduce" Type="varchar" MaxLength="500" />
+          <Property Name="YourVision" Type="varchar" MaxLength="500" />
+          <Property Name="Homepage" Type="varchar" MaxLength="100" />
+          <Property Name="Feedbookpage" Type="varchar" MaxLength="100" />
+          <Property Name="TotalFunding" Type="decimal" />
+          <Property Name="ReceivedFunding" Type="decimal" />
+          <Property Name="ImgUrl" Type="varchar" MaxLength="100" />
+          <Property Name="IsSendNews" Type="bit" />
+          <Property Name="CurrencyStr" Type="varchar" MaxLength="10" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="IsCheck" Type="bit" />
+          <Property Name="DonateNum" Type="int" />
+          <Property Name="IsFinished" Type="bit" />
+        </EntityType>
+        <EntityType Name="Goodies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectId" Type="int" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Title" Type="varchar" MaxLength="200" />
+          <Property Name="Price" Type="decimal" />
+          <Property Name="Num" Type="int" />
+          <Property Name="CurrencyStr" Type="varchar" MaxLength="10" />
+          <Property Name="SaleNum" Type="int" />
+          <Property Name="IsLimit" Type="bit" />
+        </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="BuyId" />
+          </Key>
+          <Property Name="BuyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="OrderId" Type="varchar" MaxLength="50" />
+          <Property Name="Num" Type="smallint" />
+          <Property Name="Size" Type="varchar" MaxLength="20" />
+          <Property Name="JsonMark" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="OrderInfo">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="TotalPrice" Type="decimal" />
+          <Property Name="PayType" Type="varchar" MaxLength="50" />
+          <Property Name="IsPayment" Type="bit" />
+          <Property Name="ReceiverName" Type="varchar" MaxLength="100" />
+          <Property Name="ReceiverPhone" Type="varchar" MaxLength="50" />
+          <Property Name="PostCode" Type="char" MaxLength="10" />
+          <Property Name="ReceiverAddress" Type="varchar" MaxLength="200" />
+          <Property Name="CurrencyStr" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ClassId" Type="smallint" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Price" Type="decimal" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ImageUrl" Type="varchar" MaxLength="200" />
+          <Property Name="Title" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ProductClass">
+          <Key>
+            <PropertyRef Name="ClassId" />
+          </Key>
+          <Property Name="ClassId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ClassName" Type="varchar" MaxLength="100" />
+          <Property Name="FatherClassId" Type="smallint" />
+        </EntityType>
+        <EntityType Name="ProductInventory">
+          <Key>
+            <PropertyRef Name="InventoryId" />
+          </Key>
+          <Property Name="InventoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="Size" Type="varchar" MaxLength="20" />
+          <Property Name="InventoryQuantity" Type="int" />
+          <Property Name="Color" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ShopCar">
+          <Key>
+            <PropertyRef Name="CarId" />
+          </Key>
+          <Property Name="CarId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="Num" Type="int" />
+          <Property Name="Size" Type="varchar" MaxLength="20" />
+          <Property Name="JsonMark" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="SportCategory">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="500" />
+          <Property Name="IsDel" Type="bit" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CountryId" Type="int" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="100" />
+          <Property Name="LoginPwd" Type="varchar" MaxLength="100" />
+          <Property Name="Gender" Type="bit" />
+          <Property Name="Address" Type="varchar" MaxLength="500" />
+          <Property Name="Zip" Type="varchar" MaxLength="100" />
+          <Property Name="Town" Type="varchar" MaxLength="500" />
+          <Property Name="CountryName" Type="varchar" MaxLength="100" />
+          <Property Name="Birthday" Type="datetime" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="IsCheck" Type="bit" />
+          <Property Name="ActiveKey" Type="uniqueidentifier" />
+        </EntityType>
+        <Association Name="FK_AREA_REFERENCE_COUNTRY">
+          <End Role="Country" Type="MediaSystemModel.Store.Country" Multiplicity="0..1" />
+          <End Role="Area" Type="MediaSystemModel.Store.Area" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Area">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BLOG_REFERENCE_DONATION">
+          <End Role="DonationProject" Type="MediaSystemModel.Store.DonationProject" Multiplicity="0..1" />
+          <End Role="Blog" Type="MediaSystemModel.Store.Blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonationProject">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="Blog">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONATERE_REFERENCE_GOODIES">
+          <End Role="Goodies" Type="MediaSystemModel.Store.Goodies" Multiplicity="0..1" />
+          <End Role="DonateRecord" Type="MediaSystemModel.Store.DonateRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goodies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DonateRecord">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONATERE_REFERENCE_ORDERINF">
+          <End Role="OrderInfo" Type="MediaSystemModel.Store.OrderInfo" Multiplicity="0..1" />
+          <End Role="DonateRecord" Type="MediaSystemModel.Store.DonateRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderInfo">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="DonateRecord">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONATERE_REFERENCE_USER">
+          <End Role="User" Type="MediaSystemModel.Store.User" Multiplicity="0..1" />
+          <End Role="DonateRecord" Type="MediaSystemModel.Store.DonateRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="DonateRecord">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonateRecord_REFERENCE_DONATION">
+          <End Role="DonationProject" Type="MediaSystemModel.Store.DonationProject" Multiplicity="0..1" />
+          <End Role="DonateRecord" Type="MediaSystemModel.Store.DonateRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonationProject">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="DonateRecord">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONATION_REFERENCE_ADMINIST">
+          <End Role="Administrator" Type="MediaSystemModel.Store.Administrator" Multiplicity="0..1" />
+          <End Role="DonationProject" Type="MediaSystemModel.Store.DonationProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Administrator">
+              <PropertyRef Name="AdminId" />
+            </Principal>
+            <Dependent Role="DonationProject">
+              <PropertyRef Name="AdminId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONATION_REFERENCE_AREA">
+          <End Role="Area" Type="MediaSystemModel.Store.Area" Multiplicity="0..1" />
+          <End Role="DonationProject" Type="MediaSystemModel.Store.DonationProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="AreaId" />
+            </Principal>
+            <Dependent Role="DonationProject">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONATION_REFERENCE_SPORTCAT">
+          <End Role="SportCategory" Type="MediaSystemModel.Store.SportCategory" Multiplicity="0..1" />
+          <End Role="DonationProject" Type="MediaSystemModel.Store.DonationProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SportCategory">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="DonationProject">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONATION_REFERENCE_USER">
+          <End Role="User" Type="MediaSystemModel.Store.User" Multiplicity="0..1" />
+          <End Role="DonationProject" Type="MediaSystemModel.Store.DonationProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="DonationProject">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GOODIES_REFERENCE_DONATION">
+          <End Role="DonationProject" Type="MediaSystemModel.Store.DonationProject" Multiplicity="0..1" />
+          <End Role="Goodies" Type="MediaSystemModel.Store.Goodies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonationProject">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="Goodies">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDERDET_REFERENCE_ORDERINF">
+          <End Role="OrderInfo" Type="MediaSystemModel.Store.OrderInfo" Multiplicity="0..1" />
+          <End Role="OrderDetails" Type="MediaSystemModel.Store.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderInfo">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDERDET_REFERENCE_PRODUCT">
+          <End Role="Product" Type="MediaSystemModel.Store.Product" Multiplicity="0..1" />
+          <End Role="OrderDetails" Type="MediaSystemModel.Store.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDERINF_REFERENCE_USER">
+          <End Role="User" Type="MediaSystemModel.Store.User" Multiplicity="0..1" />
+          <End Role="OrderInfo" Type="MediaSystemModel.Store.OrderInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="OrderInfo">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCT_REFERENCE_PRODUCTC">
+          <End Role="ProductClass" Type="MediaSystemModel.Store.ProductClass" Multiplicity="0..1" />
+          <End Role="Product" Type="MediaSystemModel.Store.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductClass">
+              <PropertyRef Name="ClassId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCTI_REFERENCE_PRODUCT">
+          <End Role="Product" Type="MediaSystemModel.Store.Product" Multiplicity="0..1" />
+          <End Role="ProductInventory" Type="MediaSystemModel.Store.ProductInventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductInventory">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SHOPCAR_REFERENCE_PRODUCT">
+          <End Role="Product" Type="MediaSystemModel.Store.Product" Multiplicity="0..1" />
+          <End Role="ShopCar" Type="MediaSystemModel.Store.ShopCar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ShopCar">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_REFERENCE_COUNTRY">
+          <End Role="Country" Type="MediaSystemModel.Store.Country" Multiplicity="0..1" />
+          <End Role="User" Type="MediaSystemModel.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MediaSystemModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administrators" EntityType="MediaSystemModel.Administrator" />
+          <EntitySet Name="Areas" EntityType="MediaSystemModel.Area" />
+          <EntitySet Name="Blogs" EntityType="MediaSystemModel.Blog" />
+          <EntitySet Name="Countries" EntityType="MediaSystemModel.Country" />
+          <EntitySet Name="DonateRecords" EntityType="MediaSystemModel.DonateRecord" />
+          <EntitySet Name="DonationProjects" EntityType="MediaSystemModel.DonationProject" />
+          <EntitySet Name="Goodies" EntityType="MediaSystemModel.Goody" />
+          <EntitySet Name="OrderDetails" EntityType="MediaSystemModel.OrderDetail" />
+          <EntitySet Name="OrderInfoes" EntityType="MediaSystemModel.OrderInfo" />
+          <EntitySet Name="Products" EntityType="MediaSystemModel.Product" />
+          <EntitySet Name="ProductClasses" EntityType="MediaSystemModel.ProductClass" />
+          <EntitySet Name="ProductInventories" EntityType="MediaSystemModel.ProductInventory" />
+          <EntitySet Name="ShopCars" EntityType="MediaSystemModel.ShopCar" />
+          <EntitySet Name="SportCategories" EntityType="MediaSystemModel.SportCategory" />
+          <EntitySet Name="Users" EntityType="MediaSystemModel.User" />
+          <AssociationSet Name="FK_DONATION_REFERENCE_ADMINIST" Association="MediaSystemModel.FK_DONATION_REFERENCE_ADMINIST">
+            <End Role="Administrator" EntitySet="Administrators" />
+            <End Role="DonationProject" EntitySet="DonationProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AREA_REFERENCE_COUNTRY" Association="MediaSystemModel.FK_AREA_REFERENCE_COUNTRY">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Area" EntitySet="Areas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONATION_REFERENCE_AREA" Association="MediaSystemModel.FK_DONATION_REFERENCE_AREA">
+            <End Role="Area" EntitySet="Areas" />
+            <End Role="DonationProject" EntitySet="DonationProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BLOG_REFERENCE_DONATION" Association="MediaSystemModel.FK_BLOG_REFERENCE_DONATION">
+            <End Role="DonationProject" EntitySet="DonationProjects" />
+            <End Role="Blog" EntitySet="Blogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_REFERENCE_COUNTRY" Association="MediaSystemModel.FK_USER_REFERENCE_COUNTRY">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONATERE_REFERENCE_GOODIES" Association="MediaSystemModel.FK_DONATERE_REFERENCE_GOODIES">
+            <End Role="Goody" EntitySet="Goodies" />
+            <End Role="DonateRecord" EntitySet="DonateRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONATERE_REFERENCE_ORDERINF" Association="MediaSystemModel.FK_DONATERE_REFERENCE_ORDERINF">
+            <End Role="OrderInfo" EntitySet="OrderInfoes" />
+            <End Role="DonateRecord" EntitySet="DonateRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONATERE_REFERENCE_USER" Association="MediaSystemModel.FK_DONATERE_REFERENCE_USER">
+            <End Role="User" EntitySet="Users" />
+            <End Role="DonateRecord" EntitySet="DonateRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonateRecord_REFERENCE_DONATION" Association="MediaSystemModel.FK_DonateRecord_REFERENCE_DONATION">
+            <End Role="DonationProject" EntitySet="DonationProjects" />
+            <End Role="DonateRecord" EntitySet="DonateRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONATION_REFERENCE_SPORTCAT" Association="MediaSystemModel.FK_DONATION_REFERENCE_SPORTCAT">
+            <End Role="SportCategory" EntitySet="SportCategories" />
+            <End Role="DonationProject" EntitySet="DonationProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONATION_REFERENCE_USER" Association="MediaSystemModel.FK_DONATION_REFERENCE_USER">
+            <End Role="User" EntitySet="Users" />
+            <End Role="DonationProject" EntitySet="DonationProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GOODIES_REFERENCE_DONATION" Association="MediaSystemModel.FK_GOODIES_REFERENCE_DONATION">
+            <End Role="DonationProject" EntitySet="DonationProjects" />
+            <End Role="Goody" EntitySet="Goodies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDERDET_REFERENCE_ORDERINF" Association="MediaSystemModel.FK_ORDERDET_REFERENCE_ORDERINF">
+            <End Role="OrderInfo" EntitySet="OrderInfoes" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDERDET_REFERENCE_PRODUCT" Association="MediaSystemModel.FK_ORDERDET_REFERENCE_PRODUCT">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDERINF_REFERENCE_USER" Association="MediaSystemModel.FK_ORDERINF_REFERENCE_USER">
+            <End Role="User" EntitySet="Users" />
+            <End Role="OrderInfo" EntitySet="OrderInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCT_REFERENCE_PRODUCTC" Association="MediaSystemModel.FK_PRODUCT_REFERENCE_PRODUCTC">
+            <End Role="ProductClass" EntitySet="ProductClasses" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCTI_REFERENCE_PRODUCT" Association="MediaSystemModel.FK_PRODUCTI_REFERENCE_PRODUCT">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductInventory" EntitySet="ProductInventories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SHOPCAR_REFERENCE_PRODUCT" Association="MediaSystemModel.FK_SHOPCAR_REFERENCE_PRODUCT">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ShopCar" EntitySet="ShopCars" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Administrator">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Type="Int16" Name="AdminId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AdminName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AdminPwd" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DonationProjects" Relationship="MediaSystemModel.FK_DONATION_REFERENCE_ADMINIST" FromRole="Administrator" ToRole="DonationProject" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Type="Int32" Name="AreaId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CountryId" />
+          <Property Type="String" Name="AreaName" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsDel" />
+          <NavigationProperty Name="Country" Relationship="MediaSystemModel.FK_AREA_REFERENCE_COUNTRY" FromRole="Area" ToRole="Country" />
+          <NavigationProperty Name="DonationProjects" Relationship="MediaSystemModel.FK_DONATION_REFERENCE_AREA" FromRole="Area" ToRole="DonationProject" />
+        </EntityType>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="blogId" />
+          </Key>
+          <Property Type="Int32" Name="blogId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ProjectId" />
+          <Property Type="String" Name="Title" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Content" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="String" Name="ImgUrl" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsCheck" />
+          <NavigationProperty Name="DonationProject" Relationship="MediaSystemModel.FK_BLOG_REFERENCE_DONATION" FromRole="Blog" ToRole="DonationProject" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Type="Int32" Name="CountryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CountryName" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsDel" />
+          <NavigationProperty Name="Areas" Relationship="MediaSystemModel.FK_AREA_REFERENCE_COUNTRY" FromRole="Country" ToRole="Area" />
+          <NavigationProperty Name="Users" Relationship="MediaSystemModel.FK_USER_REFERENCE_COUNTRY" FromRole="Country" ToRole="User" />
+        </EntityType>
+        <EntityType Name="DonateRecord">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Type="Int32" Name="RecordId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="Int32" Name="Id" />
+          <Property Type="Decimal" Name="DonateFunding" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="DonateDate" />
+          <Property Type="Boolean" Name="IsPayment" />
+          <Property Type="String" Name="CurrencyStr" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OrderId" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ProjectId" />
+          <NavigationProperty Name="Goody" Relationship="MediaSystemModel.FK_DONATERE_REFERENCE_GOODIES" FromRole="DonateRecord" ToRole="Goody" />
+          <NavigationProperty Name="OrderInfo" Relationship="MediaSystemModel.FK_DONATERE_REFERENCE_ORDERINF" FromRole="DonateRecord" ToRole="OrderInfo" />
+          <NavigationProperty Name="User" Relationship="MediaSystemModel.FK_DONATERE_REFERENCE_USER" FromRole="DonateRecord" ToRole="User" />
+          <NavigationProperty Name="DonationProject" Relationship="MediaSystemModel.FK_DonateRecord_REFERENCE_DONATION" FromRole="DonateRecord" ToRole="DonationProject" />
+        </EntityType>
+        <EntityType Name="DonationProject">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Type="Int32" Name="ProjectId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="AdminId" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="Int32" Name="AreaId" />
+          <Property Type="Int32" Name="CategoryId" />
+          <Property Type="String" Name="ProjectName" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="YoutubeUrl" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ProjectSummary" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Need" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NeedReason" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CountryName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AreaName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CategoryName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SelfIntroduce" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="YourVision" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Homepage" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Feedbookpage" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="TotalFunding" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="ReceivedFunding" Precision="18" Scale="0" />
+          <Property Type="String" Name="ImgUrl" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsSendNews" />
+          <Property Type="String" Name="CurrencyStr" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="DateTime" Name="EndDate" />
+          <Property Type="Boolean" Name="IsCheck" />
+          <Property Type="Int32" Name="DonateNum" />
+          <Property Type="Boolean" Name="IsFinished" />
+          <NavigationProperty Name="Administrator" Relationship="MediaSystemModel.FK_DONATION_REFERENCE_ADMINIST" FromRole="DonationProject" ToRole="Administrator" />
+          <NavigationProperty Name="Area" Relationship="MediaSystemModel.FK_DONATION_REFERENCE_AREA" FromRole="DonationProject" ToRole="Area" />
+          <NavigationProperty Name="Blogs" Relationship="MediaSystemModel.FK_BLOG_REFERENCE_DONATION" FromRole="DonationProject" ToRole="Blog" />
+          <NavigationProperty Name="DonateRecords" Relationship="MediaSystemModel.FK_DonateRecord_REFERENCE_DONATION" FromRole="DonationProject" ToRole="DonateRecord" />
+          <NavigationProperty Name="SportCategory" Relationship="MediaSystemModel.FK_DONATION_REFERENCE_SPORTCAT" FromRole="DonationProject" ToRole="SportCategory" />
+          <NavigationProperty Name="User" Relationship="MediaSystemModel.FK_DONATION_REFERENCE_USER" FromRole="DonationProject" ToRole="User" />
+          <NavigationProperty Name="Goodies" Relationship="MediaSystemModel.FK_GOODIES_REFERENCE_DONATION" FromRole="DonationProject" ToRole="Goody" />
+        </EntityType>
+        <EntityType Name="Goody">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ProjectId" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Title" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Price" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="Num" />
+          <Property Type="String" Name="CurrencyStr" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="SaleNum" />
+          <Property Type="Boolean" Name="IsLimit" />
+          <NavigationProperty Name="DonateRecords" Relationship="MediaSystemModel.FK_DONATERE_REFERENCE_GOODIES" FromRole="Goody" ToRole="DonateRecord" />
+          <NavigationProperty Name="DonationProject" Relationship="MediaSystemModel.FK_GOODIES_REFERENCE_DONATION" FromRole="Goody" ToRole="DonationProject" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="BuyId" />
+          </Key>
+          <Property Type="Int32" Name="BuyId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ProductId" />
+          <Property Type="String" Name="OrderId" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="Num" />
+          <Property Type="String" Name="Size" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="JsonMark" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OrderInfo" Relationship="MediaSystemModel.FK_ORDERDET_REFERENCE_ORDERINF" FromRole="OrderDetail" ToRole="OrderInfo" />
+          <NavigationProperty Name="Product" Relationship="MediaSystemModel.FK_ORDERDET_REFERENCE_PRODUCT" FromRole="OrderDetail" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="OrderInfo">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Type="String" Name="OrderId" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="DateTime" Name="OrderDate" />
+          <Property Type="Decimal" Name="TotalPrice" Precision="18" Scale="0" />
+          <Property Type="String" Name="PayType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsPayment" />
+          <Property Type="String" Name="ReceiverName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ReceiverPhone" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PostCode" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="ReceiverAddress" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CurrencyStr" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DonateRecords" Relationship="MediaSystemModel.FK_DONATERE_REFERENCE_ORDERINF" FromRole="OrderInfo" ToRole="DonateRecord" />
+          <NavigationProperty Name="OrderDetails" Relationship="MediaSystemModel.FK_ORDERDET_REFERENCE_ORDERINF" FromRole="OrderInfo" ToRole="OrderDetail" />
+          <NavigationProperty Name="User" Relationship="MediaSystemModel.FK_ORDERINF_REFERENCE_USER" FromRole="OrderInfo" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Type="Int32" Name="ProductId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="ClassId" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Price" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="String" Name="ImageUrl" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Title" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OrderDetails" Relationship="MediaSystemModel.FK_ORDERDET_REFERENCE_PRODUCT" FromRole="Product" ToRole="OrderDetail" />
+          <NavigationProperty Name="ProductClass" Relationship="MediaSystemModel.FK_PRODUCT_REFERENCE_PRODUCTC" FromRole="Product" ToRole="ProductClass" />
+          <NavigationProperty Name="ProductInventories" Relationship="MediaSystemModel.FK_PRODUCTI_REFERENCE_PRODUCT" FromRole="Product" ToRole="ProductInventory" />
+          <NavigationProperty Name="ShopCars" Relationship="MediaSystemModel.FK_SHOPCAR_REFERENCE_PRODUCT" FromRole="Product" ToRole="ShopCar" />
+        </EntityType>
+        <EntityType Name="ProductClass">
+          <Key>
+            <PropertyRef Name="ClassId" />
+          </Key>
+          <Property Type="Int16" Name="ClassId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ClassName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="FatherClassId" />
+          <NavigationProperty Name="Products" Relationship="MediaSystemModel.FK_PRODUCT_REFERENCE_PRODUCTC" FromRole="ProductClass" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ProductInventory">
+          <Key>
+            <PropertyRef Name="InventoryId" />
+          </Key>
+          <Property Type="Int32" Name="InventoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ProductId" />
+          <Property Type="String" Name="Size" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="InventoryQuantity" />
+          <Property Type="String" Name="Color" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="MediaSystemModel.FK_PRODUCTI_REFERENCE_PRODUCT" FromRole="ProductInventory" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ShopCar">
+          <Key>
+            <PropertyRef Name="CarId" />
+          </Key>
+          <Property Type="Int32" Name="CarId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ProductId" />
+          <Property Type="Int32" Name="Num" />
+          <Property Type="String" Name="Size" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="JsonMark" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="MediaSystemModel.FK_SHOPCAR_REFERENCE_PRODUCT" FromRole="ShopCar" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="SportCategory">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Type="Int32" Name="CategoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CategoryName" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsDel" />
+          <NavigationProperty Name="DonationProjects" Relationship="MediaSystemModel.FK_DONATION_REFERENCE_SPORTCAT" FromRole="SportCategory" ToRole="DonationProject" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CountryId" />
+          <Property Type="String" Name="FirstName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LastName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmailAddress" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LoginPwd" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Gender" />
+          <Property Type="String" Name="Address" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Zip" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Town" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CountryName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Birthday" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="Boolean" Name="IsCheck" />
+          <Property Type="Guid" Name="ActiveKey" />
+          <NavigationProperty Name="Country" Relationship="MediaSystemModel.FK_USER_REFERENCE_COUNTRY" FromRole="User" ToRole="Country" />
+          <NavigationProperty Name="DonateRecords" Relationship="MediaSystemModel.FK_DONATERE_REFERENCE_USER" FromRole="User" ToRole="DonateRecord" />
+          <NavigationProperty Name="DonationProjects" Relationship="MediaSystemModel.FK_DONATION_REFERENCE_USER" FromRole="User" ToRole="DonationProject" />
+          <NavigationProperty Name="OrderInfoes" Relationship="MediaSystemModel.FK_ORDERINF_REFERENCE_USER" FromRole="User" ToRole="OrderInfo" />
+        </EntityType>
+        <Association Name="FK_DONATION_REFERENCE_ADMINIST">
+          <End Type="MediaSystemModel.Administrator" Role="Administrator" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.DonationProject" Role="DonationProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Administrator">
+              <PropertyRef Name="AdminId" />
+            </Principal>
+            <Dependent Role="DonationProject">
+              <PropertyRef Name="AdminId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AREA_REFERENCE_COUNTRY">
+          <End Type="MediaSystemModel.Country" Role="Country" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.Area" Role="Area" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Area">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONATION_REFERENCE_AREA">
+          <End Type="MediaSystemModel.Area" Role="Area" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.DonationProject" Role="DonationProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="AreaId" />
+            </Principal>
+            <Dependent Role="DonationProject">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BLOG_REFERENCE_DONATION">
+          <End Type="MediaSystemModel.DonationProject" Role="DonationProject" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.Blog" Role="Blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonationProject">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="Blog">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_REFERENCE_COUNTRY">
+          <End Type="MediaSystemModel.Country" Role="Country" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONATERE_REFERENCE_GOODIES">
+          <End Type="MediaSystemModel.Goody" Role="Goody" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.DonateRecord" Role="DonateRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goody">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DonateRecord">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONATERE_REFERENCE_ORDERINF">
+          <End Type="MediaSystemModel.OrderInfo" Role="OrderInfo" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.DonateRecord" Role="DonateRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderInfo">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="DonateRecord">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONATERE_REFERENCE_USER">
+          <End Type="MediaSystemModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.DonateRecord" Role="DonateRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="DonateRecord">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonateRecord_REFERENCE_DONATION">
+          <End Type="MediaSystemModel.DonationProject" Role="DonationProject" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.DonateRecord" Role="DonateRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonationProject">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="DonateRecord">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONATION_REFERENCE_SPORTCAT">
+          <End Type="MediaSystemModel.SportCategory" Role="SportCategory" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.DonationProject" Role="DonationProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SportCategory">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="DonationProject">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONATION_REFERENCE_USER">
+          <End Type="MediaSystemModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.DonationProject" Role="DonationProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="DonationProject">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GOODIES_REFERENCE_DONATION">
+          <End Type="MediaSystemModel.DonationProject" Role="DonationProject" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.Goody" Role="Goody" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonationProject">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="Goody">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDERDET_REFERENCE_ORDERINF">
+          <End Type="MediaSystemModel.OrderInfo" Role="OrderInfo" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderInfo">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDERDET_REFERENCE_PRODUCT">
+          <End Type="MediaSystemModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDERINF_REFERENCE_USER">
+          <End Type="MediaSystemModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.OrderInfo" Role="OrderInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="OrderInfo">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCT_REFERENCE_PRODUCTC">
+          <End Type="MediaSystemModel.ProductClass" Role="ProductClass" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductClass">
+              <PropertyRef Name="ClassId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCTI_REFERENCE_PRODUCT">
+          <End Type="MediaSystemModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.ProductInventory" Role="ProductInventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductInventory">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SHOPCAR_REFERENCE_PRODUCT">
+          <End Type="MediaSystemModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="MediaSystemModel.ShopCar" Role="ShopCar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ShopCar">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MediaSystemModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Administrators">
+            <EntityTypeMapping TypeName="MediaSystemModel.Administrator">
+              <MappingFragment StoreEntitySet="Administrator">
+                <ScalarProperty Name="AdminPwd" ColumnName="AdminPwd" />
+                <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Areas">
+            <EntityTypeMapping TypeName="MediaSystemModel.Area">
+              <MappingFragment StoreEntitySet="Area">
+                <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Blogs">
+            <EntityTypeMapping TypeName="MediaSystemModel.Blog">
+              <MappingFragment StoreEntitySet="Blog">
+                <ScalarProperty Name="IsCheck" ColumnName="IsCheck" />
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="blogId" ColumnName="blogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="MediaSystemModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DonateRecords">
+            <EntityTypeMapping TypeName="MediaSystemModel.DonateRecord">
+              <MappingFragment StoreEntitySet="DonateRecord">
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="CurrencyStr" ColumnName="CurrencyStr" />
+                <ScalarProperty Name="IsPayment" ColumnName="IsPayment" />
+                <ScalarProperty Name="DonateDate" ColumnName="DonateDate" />
+                <ScalarProperty Name="DonateFunding" ColumnName="DonateFunding" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DonationProjects">
+            <EntityTypeMapping TypeName="MediaSystemModel.DonationProject">
+              <MappingFragment StoreEntitySet="DonationProject">
+                <ScalarProperty Name="IsFinished" ColumnName="IsFinished" />
+                <ScalarProperty Name="DonateNum" ColumnName="DonateNum" />
+                <ScalarProperty Name="IsCheck" ColumnName="IsCheck" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CurrencyStr" ColumnName="CurrencyStr" />
+                <ScalarProperty Name="IsSendNews" ColumnName="IsSendNews" />
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="ReceivedFunding" ColumnName="ReceivedFunding" />
+                <ScalarProperty Name="TotalFunding" ColumnName="TotalFunding" />
+                <ScalarProperty Name="Feedbookpage" ColumnName="Feedbookpage" />
+                <ScalarProperty Name="Homepage" ColumnName="Homepage" />
+                <ScalarProperty Name="YourVision" ColumnName="YourVision" />
+                <ScalarProperty Name="SelfIntroduce" ColumnName="SelfIntroduce" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="NeedReason" ColumnName="NeedReason" />
+                <ScalarProperty Name="Need" ColumnName="Need" />
+                <ScalarProperty Name="ProjectSummary" ColumnName="ProjectSummary" />
+                <ScalarProperty Name="YoutubeUrl" ColumnName="YoutubeUrl" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Goodies">
+            <EntityTypeMapping TypeName="MediaSystemModel.Goody">
+              <MappingFragment StoreEntitySet="Goodies">
+                <ScalarProperty Name="IsLimit" ColumnName="IsLimit" />
+                <ScalarProperty Name="SaleNum" ColumnName="SaleNum" />
+                <ScalarProperty Name="CurrencyStr" ColumnName="CurrencyStr" />
+                <ScalarProperty Name="Num" ColumnName="Num" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="MediaSystemModel.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="JsonMark" ColumnName="JsonMark" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Num" ColumnName="Num" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="BuyId" ColumnName="BuyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderInfoes">
+            <EntityTypeMapping TypeName="MediaSystemModel.OrderInfo">
+              <MappingFragment StoreEntitySet="OrderInfo">
+                <ScalarProperty Name="CurrencyStr" ColumnName="CurrencyStr" />
+                <ScalarProperty Name="ReceiverAddress" ColumnName="ReceiverAddress" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="ReceiverPhone" ColumnName="ReceiverPhone" />
+                <ScalarProperty Name="ReceiverName" ColumnName="ReceiverName" />
+                <ScalarProperty Name="IsPayment" ColumnName="IsPayment" />
+                <ScalarProperty Name="PayType" ColumnName="PayType" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="MediaSystemModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductClasses">
+            <EntityTypeMapping TypeName="MediaSystemModel.ProductClass">
+              <MappingFragment StoreEntitySet="ProductClass">
+                <ScalarProperty Name="FatherClassId" ColumnName="FatherClassId" />
+                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductInventories">
+            <EntityTypeMapping TypeName="MediaSystemModel.ProductInventory">
+              <MappingFragment StoreEntitySet="ProductInventory">
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="InventoryQuantity" ColumnName="InventoryQuantity" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="InventoryId" ColumnName="InventoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShopCars">
+            <EntityTypeMapping TypeName="MediaSystemModel.ShopCar">
+              <MappingFragment StoreEntitySet="ShopCar">
+                <ScalarProperty Name="JsonMark" ColumnName="JsonMark" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Num" ColumnName="Num" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="CarId" ColumnName="CarId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SportCategories">
+            <EntityTypeMapping TypeName="MediaSystemModel.SportCategory">
+              <MappingFragment StoreEntitySet="SportCategory">
+                <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MediaSystemModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="ActiveKey" ColumnName="ActiveKey" />
+                <ScalarProperty Name="IsCheck" ColumnName="IsCheck" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="LoginPwd" ColumnName="LoginPwd" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="MediaSystemModel.Administrator" Width="1.5" PointX="6" PointY="6.5" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="MediaSystemModel.Area" Width="1.5" PointX="3" PointY="5.875" Height="2.1725878906250102" />
+        <EntityTypeShape EntityType="MediaSystemModel.Blog" Width="1.5" PointX="10.5" PointY="6.5" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="MediaSystemModel.Country" Width="1.5" PointX="0.75" PointY="8.75" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="MediaSystemModel.DonateRecord" Width="1.5" PointX="12.75" PointY="9.75" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="MediaSystemModel.DonationProject" Width="1.5" PointX="8.25" PointY="5.875" Height="7.5570279947916674" />
+        <EntityTypeShape EntityType="MediaSystemModel.Goody" Width="1.5" PointX="10.5" PointY="14" Height="3.1340950520833388" />
+        <EntityTypeShape EntityType="MediaSystemModel.OrderDetail" Width="1.5" PointX="10.5" PointY="9.875" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="MediaSystemModel.OrderInfo" Width="1.5" PointX="5.25" PointY="9.25" Height="3.7109993489583246" />
+        <EntityTypeShape EntityType="MediaSystemModel.Product" Width="1.5" PointX="8.25" PointY="1.625" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="MediaSystemModel.ProductClass" Width="1.5" PointX="6" PointY="2.25" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="MediaSystemModel.ProductInventory" Width="1.5" PointX="10.5" PointY="3.125" Height="2.172587890624996" />
+        <EntityTypeShape EntityType="MediaSystemModel.ShopCar" Width="1.5" PointX="10.5" PointY="18" Height="2.1725878906250102" />
+        <EntityTypeShape EntityType="MediaSystemModel.SportCategory" Width="1.5" PointX="6" PointY="14.125" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="MediaSystemModel.User" Width="1.5" PointX="3" PointY="8.875" Height="4.6725065104166674" />
+        <AssociationConnector Association="MediaSystemModel.FK_DONATION_REFERENCE_ADMINIST" >
+          <ConnectorPoint PointX="7.5" PointY="7.3939925130208337" />
+          <ConnectorPoint PointX="8.25" PointY="7.3939925130208337" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_AREA_REFERENCE_COUNTRY" >
+          <ConnectorPoint PointX="1.5" PointY="8.75" />
+          <ConnectorPoint PointX="1.5" PointY="6.9612939453125051" />
+          <ConnectorPoint PointX="3" PointY="6.9612939453125051" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_DONATION_REFERENCE_AREA" >
+          <ConnectorPoint PointX="4.5" PointY="6.15625" />
+          <ConnectorPoint PointX="8.25" PointY="6.15625" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_BLOG_REFERENCE_DONATION" >
+          <ConnectorPoint PointX="9.75" PointY="7.7785953776041623" />
+          <ConnectorPoint PointX="10.104166666666666" PointY="7.7785953776041614" />
+          <ConnectorPoint PointX="10.364583333333334" PointY="7.7785953776041623" />
+          <ConnectorPoint PointX="10.5" PointY="7.7785953776041623" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_USER_REFERENCE_COUNTRY" >
+          <ConnectorPoint PointX="2.25" PointY="9.80264322916667" />
+          <ConnectorPoint PointX="3" PointY="9.80264322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_DONATERE_REFERENCE_GOODIES" >
+          <ConnectorPoint PointX="12" PointY="15.567047526041669" />
+          <ConnectorPoint PointX="13.5" PointY="15.567047526041669" />
+          <ConnectorPoint PointX="13.5" PointY="13.268697916666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_DONATERE_REFERENCE_ORDERINF" >
+          <ConnectorPoint PointX="6" PointY="12.960999348958325" />
+          <ConnectorPoint PointX="6" PointY="13.682027994791667" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="13.682027994791667" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="13.682027994791667" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="13.682027994791667" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="13.682027994791667" />
+          <ConnectorPoint PointX="9.3229191666666669" PointY="13.682027994791667" />
+          <ConnectorPoint PointX="9.4895858333333347" PointY="13.682027994791667" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="13.682027994791666" />
+          <ConnectorPoint PointX="10.364583333333334" PointY="13.682027994791667" />
+          <ConnectorPoint PointX="12.375" PointY="13.682027994791667" />
+          <ConnectorPoint PointX="12.375" PointY="11.509348958333334" />
+          <ConnectorPoint PointX="12.75" PointY="11.509348958333334" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_DONATERE_REFERENCE_USER" >
+          <ConnectorPoint PointX="4.5" PointY="13.521017252604167" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="13.521017252604167" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="13.521017252604167" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="13.521017252604167" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="13.521017252604167" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="13.521017252604167" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="13.521017252604167" />
+          <ConnectorPoint PointX="9.3229191666666669" PointY="13.521017252604167" />
+          <ConnectorPoint PointX="9.4895858333333347" PointY="13.521017252604167" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="13.521017252604166" />
+          <ConnectorPoint PointX="10.364583333333334" PointY="13.521017252604167" />
+          <ConnectorPoint PointX="12.291666666666666" PointY="13.521017252604167" />
+          <ConnectorPoint PointX="12.458333333333334" PointY="13.521017252604167" />
+          <ConnectorPoint PointX="13.0937475" PointY="13.521017252604167" />
+          <ConnectorPoint PointX="13.0937475" PointY="13.268697916666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_DonateRecord_REFERENCE_DONATION" >
+          <ConnectorPoint PointX="9.75" PointY="12.881694335937503" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="12.881694335937501" />
+          <ConnectorPoint PointX="10.364583333333334" PointY="12.881694335937503" />
+          <ConnectorPoint PointX="12.291666666666666" PointY="12.881694335937503" />
+          <ConnectorPoint PointX="12.458333333333334" PointY="12.881694335937503" />
+          <ConnectorPoint PointX="12.75" PointY="12.881694335937503" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_DONATION_REFERENCE_SPORTCAT" >
+          <ConnectorPoint PointX="7.5" PointY="15.018992513020834" />
+          <ConnectorPoint PointX="9" PointY="15.018992513020834" />
+          <ConnectorPoint PointX="9" PointY="13.432027994791667" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_DONATION_REFERENCE_USER" >
+          <ConnectorPoint PointX="4.5" PointY="13.227763671874996" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="13.227763671874996" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="13.227763671874996" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="13.227763671874996" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="13.227763671874996" />
+          <ConnectorPoint PointX="8.25" PointY="13.227763671874996" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_GOODIES_REFERENCE_DONATION" >
+          <ConnectorPoint PointX="9.4062525" PointY="13.432027994791667" />
+          <ConnectorPoint PointX="9.4062525" PointY="16.076543782552086" />
+          <ConnectorPoint PointX="10.197916666666666" PointY="16.076543782552086" />
+          <ConnectorPoint PointX="10.364583333333334" PointY="16.076543782552086" />
+          <ConnectorPoint PointX="10.5" PointY="16.076543782552086" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_ORDERDET_REFERENCE_ORDERINF" >
+          <ConnectorPoint PointX="6" PointY="9.25" />
+          <ConnectorPoint PointX="6" PointY="9" />
+          <ConnectorPoint PointX="8" PointY="9" />
+          <ConnectorPoint PointX="8" PointY="13.932027994791667" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="13.932027994791667" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="13.932027994791667" />
+          <ConnectorPoint PointX="9.3229191666666669" PointY="13.932027994791667" />
+          <ConnectorPoint PointX="9.4895858333333347" PointY="13.932027994791667" />
+          <ConnectorPoint PointX="10.125" PointY="13.932027994791667" />
+          <ConnectorPoint PointX="10.125" PointY="11.153595377604169" />
+          <ConnectorPoint PointX="10.197916666666666" PointY="11.153595377604169" />
+          <ConnectorPoint PointX="10.364583333333334" PointY="11.153595377604169" />
+          <ConnectorPoint PointX="10.5" PointY="11.153595377604169" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_ORDERDET_REFERENCE_PRODUCT" >
+          <ConnectorPoint PointX="9.75" PointY="4.7325555905448624" />
+          <ConnectorPoint PointX="10.1875" PointY="5.1700555905448624" />
+          <ConnectorPoint PointX="10.1875" PointY="10.48304568880209" />
+          <ConnectorPoint PointX="10.197916666666666" PointY="10.48304568880209" />
+          <ConnectorPoint PointX="10.364583333333334" PointY="10.48304568880209" />
+          <ConnectorPoint PointX="10.5" PointY="10.48304568880209" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_ORDERINF_REFERENCE_USER" >
+          <ConnectorPoint PointX="4.5" PointY="11.105499674479162" />
+          <ConnectorPoint PointX="5.25" PointY="11.105499674479162" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_PRODUCT_REFERENCE_PRODUCTC" >
+          <ConnectorPoint PointX="7.5" PointY="3.1439925130208337" />
+          <ConnectorPoint PointX="8.25" PointY="3.1439925130208337" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_PRODUCTI_REFERENCE_PRODUCT" >
+          <ConnectorPoint PointX="9.75" PointY="3.8790637568108992" />
+          <ConnectorPoint PointX="10.5" PointY="3.8790637568108992" />
+        </AssociationConnector>
+        <AssociationConnector Association="MediaSystemModel.FK_SHOPCAR_REFERENCE_PRODUCT" >
+          <ConnectorPoint PointX="9.75" PointY="4.7510171290064012" />
+          <ConnectorPoint PointX="10.28125" PointY="5.2822671290064012" />
+          <ConnectorPoint PointX="10.28125" PointY="19.086293945312505" />
+          <ConnectorPoint PointX="10.5" PointY="19.086293945312505" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

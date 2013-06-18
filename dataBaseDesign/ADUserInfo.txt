@@ -1,0 +1,59 @@
+area:shinetechchina\guih
+pwd:Shinetech2013
+email:guih@shinetechchina.com
+google api key:AIzaSyDG-8ldEhqyI1XayhpRx4dltECu-fYhjXk
+
+PMS: 
+http://pms2.shinetechchina.com/Projects/project_home.aspx?pk=384bcbd1-9b6c-4ae1-aeb8-39f4e5ca2320
+
+SVN:
+https://123.124.143.205/svn/MEDIA
+
+
+http://www.youtube.com/v/cKKQ7NsonC8
+
+
+MEDIA FTP:
+Host: 62.112.152.161
+UserName : web285
+PwD:x5mqFUOv
+Port: 21
+
+
+DB Server:
+Server Name 'serverXY.hostfactory.ch,1435'
+
+Authentication: SQL Server Auth.
+
+Login Name: 'Your DB
+Username'
+
+Password: 'My DB Password'
+
+Please substitute 'ServerName'. The name 'XY' by your server number
+
+
+FTP Management System:
+
+Server url: https://server05.hostfactory.ch:7963/
+
+User name: supportyourlocalteam.net
+
+Password: dubuLeWa9ETE
+
+
+
+Space Topic
+Center: https://my.hostfactory.ch/
+E-Mail Adresse:	azzouz@hispeed.ch
+Passwort:	U@y$ere2U2uM
+
+
+
+
+
+北京盛安德科技发展有限公司
+
+
+
+

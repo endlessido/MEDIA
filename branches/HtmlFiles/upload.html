@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>MDEIA.FAR</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/modern.css" rel="stylesheet">
+<link href="css/modern-responsive.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/jslider.css" rel="stylesheet" type="text/css">
+<link href="css/validationEngine.jquery.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+
+<script type="text/javascript" src="js/modern/dropdown.js"></script>
+<script type="text/javascript" src="js/modern/buttonset.js"></script>
+<script type="text/javascript" src="js/modern/input-control.js"></script>
+<script type="text/javascript" src="js/modern/dialog.js"></script>
+<script type="text/javascript" src="js/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="js/languages/jquery.validationEngine-en.js"></script>
+<script type="text/javascript" src="js/jquery.maxlength.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('.max-limit').maxlength({
+            max: 140
+        });
+        var gdTmpl = $('.goodie-form').clone();
+        $('.formslideout').on('click jqv.field.result', function(event, field, errorFound, prompText){
+            var sTgt = event.target,
+                dTgt = event.delegateTarget,
+                pHead = $('.page-header-content>h1'),
+                gdCurr, gdForm, gdQuant, gdQuantH;
+            if (sTgt.id === 'formnext') {
+                $(dTgt).animate({
+                    'margin-left':'-830px'
+                }, function(){
+                    $('html,body').animate({scrollTop:0});
+                })
+                pHead.empty().append('Goodies and Video<small>&nbsp;</small>');
+            }
+
+            if (sTgt.id === 'formprev') {
+                $(dTgt).animate({
+                    'margin-left':'0'
+                }, function(){
+                    $('html,body').animate({scrollTop:0});
+                })
+                pHead.empty().append('Questionnaire<small>&nbsp;</small>');
+            }
+
+            if (sTgt.id === 'goodie-add') {
+                event.preventDefault();
+                gdCurr =  $('.goodie-form:last');
+                gdCurr.after(gdTmpl.clone());
+            }
+
+            if (sTgt.type === 'checkbox' && sTgt.className === 'page-gdinfi') {
+                gdQuant = $(sTgt).parents('.page-gditrig').siblings('.page-gdnum').find('input[type="text"]');
+                gdQuantH = gdQuant.siblings('input[type="hidden"]');
+                if (sTgt.checked) {
+                    gdQuant.validationEngine('hide').val('Unlimited').attr('disabled', '').removeClass().blur();
+                    gdQuantH.val('Unlimited');
+                } else {
+                    gdQuant.removeAttr('disabled').val('').addClass('validate[required,custom[onlyNumber]]').blur();
+                    gdQuantH.val('');
+                }
+            }
+            if ($(sTgt).parent().hasClass('gdremover') && sTgt.tagName.toLowerCase() === 'i') {
+                event.preventDefault();
+                gdForm = $('.goodie-form');
+                if (gdForm.length > 1) {
+                    $(sTgt).parents('.goodie-form').remove();
+                } else {
+                    $.Dialog({
+                        'title': 'Attention',
+                        'content': 'Please add at least 1 goodie!',
+                        'closeButton': true,
+                        'buttons': {
+                            'OK': {
+                                'action': function(){}
+                            }
+                        }
+                    });
+                }
+            }
+
+        }).on('blur', '.page-gdnum input[type="text"]', function(event) {
+            var sTgt = event.target,
+                gdQuantH = $(this).siblings('input[type="hidden"]');
+                gdQuantH.val($(this).val());
+
+        });
+        $('#page-upfile>input[type="file"]').on('change', function(){
+            $(this).siblings('.input-control').children('input[type="text"]').val($(this).val());
+        });
+        $('#page-forms').validationEngine('attach', {
+            scroll: false,
+            onValidationComplete: function(form, status){
+                var errField, errTop, errHide;
+                if (!status) {
+                    errField = $(this.InvalidFields[0]);
+                    errTop = errField.offset().top;
+                    errHide = errField.parents('.formslidein').is('#formslidel');
+                    if (errHide) {
+                        $('.formslideout').animate({
+                            'margin-left': '0'
+                        }, function(){
+                            $('html, body').animate({scrollTop:errTop - 36});
+                        });
+                    } else {
+                        $('html, body').animate({scrollTop:errTop - 36});
+                    }
+                } else {
+                    $.Dialog({
+                        'title': 'Loading',
+                        'content': 'Please wait....<img src="images/preloader-w8-line-black.gif" height="8" />',
+                        'closeButton': false,
+                        'buttons': {}
+                    });
+                    return true;
+                }
+            }
+        });
+    });
+</script>
+</head>
+<body>
+    <form action="" id="page-forms">
+        <div class="page">
+            <div class="nav-bar">
+                <div class="nav-bar-inner padding10">
+                    <p class="element brand"><a href="#" class="fg-color-white"><span class="icon-home page-homeico"><!--FILM ICON--></span></a></p>
+                    <span class="divider"><!--divider--></span>
+                    <ul class="menu">
+                        <li><a href="#">How this site works</a></li>
+                        <li><a href="#">Fundraising</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                    </ul>
+                    <ul class="menu fr">
+                        <li data-role="dropdown">
+                            <a href="#">Welcome, Username!</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">my profile</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Logout</a></li>
+                    <li class="page-nav-lang"><a href="#" title="Change Language to English"><img src="images/flag-gb.png" alt="English"></a><a href="#" title="Change Language to German"><img src="images/flag-de.png" alt="German"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page secondary">
+            <div class="page-header">
+                <div class="page-header-content">
+                    <h1>Questionnaire<small>&nbsp;</small></h1>
+                    <a class="back-button big page-back" href="/"></a>
+                </div>
+            </div>
+             
+            <div class="page-region">
+                <div class="page-region-content">
+                    <h3>Found a Project in 2 Steps</h3>
+                    <div class="formslide">
+                        <div class="formslideout clearfix">
+                            <div class="formslidein fl" id="formslidel">
+                                <div class="grid">
+                                    <div class="row">
+                                        <div class="span10">
+                                            <fieldset class="border-color-orangeDark">
+                                                <legend class="fg-color-darken">Questionnaire, fields with <span class="fg-color-red">*</span> all required</legend>
+                                                <p class="fg-color-greenDark">Project Category <span class="fg-color-red">*</span></p>
+                                                <div class="row">
+                                                    <div class="span4">
+                                                        <div class="input-control select span4">
+                                                            <select class="validate[required]" name="region">
+                                                                <option value="">Select A Category</option>
+                                                                <option value="0">Football</option>
+                                                                <option value="1">Baseball</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="fg-color-greenDark">Where are you from? <span class="fg-color-red">*</span></p>
+                                                <div class="row">
+                                                    <div class="span4">
+                                                        <div class="input-control select span4">
+                                                            <select class="validate[required]" name="region">
+                                                                <option value="">Select A Region</option>
+                                                                <option value="0">Switzerland</option>
+                                                                <option value="1">Germany</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="span4">
+                                                        <div class="input-control select span4">
+                                                            <select class="validate[required]" name="canton">
+                                                                <option value="">Select A Canton</option>
+                                                                <option value="0">Aargau</option>
+                                                                <option value="1">Appenzell</option>
+                                                                <option value="2">Basel</option>
+                                                                <option value="3">Bern</option>
+                                                                <option value="4">Fribourg</option>
+                                                                <option value="5">Geneva</option>
+                                                                <option value="6">Glarus</option>
+                                                                <option value="7">Graubünden</option>
+                                                                <option value="8">Jura</option>
+                                                                <option value="9">Lucerne</option>
+                                                                <option value="10">Neuchâtel</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="fg-color-greenDark">Name of the project? <span class="fg-color-red">*</span></p>
+                                                <div class="input-control text">
+                                                    <input type="text" class="validate[required]" data-prompt-position="topRight:-40,0" autocomplete="off" />
+                                                    <button class="helper"></button>
+                                                </div>
+                                                <p class="fg-color-greenDark">What do you need? <span class="fg-color-red">*</span></p>
+                                                <div class="input-control text">
+                                                    <input type="text" class="validate[required]" data-prompt-position="topRight:-40,0" autocomplete="off" />
+                                                    <button class="helper"></button>
+                                                </div>
+                                                <p class="fg-color-greenDark">Have you read the <a href="#">terms of service</a> and agree? <span class="fg-color-red">*</span></p>
+                                                <label class="input-control radio" class="validate[required]">
+                                                    <input type="radio" name="agreement" class="validate[required]" autocomplete="off">
+                                                    <span class="helper">Yes</span>
+                                                </label>
+                                                <label class="input-control radio" class="validate[required]">
+                                                    <input type="radio" name="agreement" class="validate[required]" autocomplete="off">
+                                                    <span class="helper">No</span>
+                                                </label>
+                                                <p class="fg-color-greenDark">Project Summary <span class="fg-color-red">*</span></p>
+                                                <div class="input-control textarea">
+                                                    <textarea autocomplete="off" data-prompt-position="topRight:-68,0" class="validate[required,maxSize[140]] max-limit"></textarea>
+                                                </div>
+                                                <p class="fg-color-greenDark">Who are you? <span class="fg-color-red">*</span></p>
+                                                <div class="input-control textarea">
+                                                    <textarea autocomplete="off" data-prompt-position="topRight:-68,0" class="validate[required]"></textarea>
+                                                </div>
+                                                <p class="fg-color-greenDark">Why do you need that? <span class="fg-color-red">*</span></p>
+                                                <div class="input-control textarea">
+                                                    <textarea autocomplete="off" data-prompt-position="topRight:-68,0" class="validate[required]"></textarea>
+                                                </div>
+                                                <p class="fg-color-greenDark">What's your vision? <span class="fg-color-red">*</span></p>
+                                                <div class="input-control textarea">
+                                                    <textarea autocomplete="off" data-prompt-position="topRight:-68,0" class="validate[required]"></textarea>
+                                                </div>
+                                                <p class="fg-color-greenDark">How long the donation will last? <span class="fg-color-red">*</span></p>
+                                                <label class="input-control checkbox">
+                                                    <input type="checkbox" class="validate[required,maxCheckbox[1]]" autocomplete="off" value="33" name="projtime">
+                                                    <span class="helper">33 days</span>
+                                                </label>
+                                                <label class="input-control checkbox">
+                                                    <input type="checkbox" class="validate[required,maxCheckbox[1]]" autocomplete="off" value="77" name="projtime">
+                                                    <span class="helper">77 days</span>
+                                                </label>
+                                                <label class="input-control checkbox">
+                                                    <input type="checkbox" class="validate[required,maxCheckbox[1]]" autocomplete="off" value="99" name="projtime">
+                                                    <span class="helper">99 days</span>
+                                                </label>
+                                                <label class="input-control checkbox">
+                                                    <input type="checkbox" class="validate[required,maxCheckbox[1]]" autocomplete="off" value="111" name="projtime">
+                                                    <span class="helper">111 days</span>
+                                                </label>
+                                                <label class="input-control checkbox">
+                                                    <input type="checkbox" class="validate[required,maxCheckbox[1]]" autocomplete="off" value="333" name="projtime">
+                                                    <span class="helper">333 days</span>
+                                                </label>
+                                                <div class="span8 as-block">
+                                                    <p class="fg-color-greenDark">How much the donation will collect? <span class="fg-color-red">*</span></p>
+                                                    <div class="span3">
+                                                        <div class="input-control text span3">
+                                                            <input type="text" autocomplete="off" class="validate[required,custom[onlyNumber]]" />
+                                                            <button class="helper"></button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="span1">
+                                                        <div class="input-control  select span1">
+                                                            <select>
+                                                                <option>CHF</option>
+                                                                <option>USD</option>
+                                                                <option>EUR</option>
+                                                                <option>GBP</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="fg-color-greenDark">Upload a image for your project</p>
+                                                <div class="as-block" id="page-upfile">
+                                                    <div class="input-control text span5">
+                                                        <input type="text" autocomplete="off" class="validate[required]" placeholder="Select a image, JPG/GIF/PNG allowed" />
+                                                    </div>
+                                                    <input type="button" value="Browse" id="fake-file">
+                                                    <input type="file" size="54">
+                                                </div>
+                                                <p class="fg-color-greenDark">Your webpage?</p>
+                                                <div class="input-control text">
+                                                    <input type="text" autocomplete="off" class="validate[custom[url]]" placeholder="Enter you webpage link." />
+                                                    <button class="helper"></button>
+                                                </div>
+                                                <p class="fg-color-greenDark">Your facebook page?</p>
+                                                <div class="input-control text">
+                                                    <input type="text" autocomplete="off" class="validate[custom[url]]" placeholder="Enter you facebook link." />
+                                                    <button class="helper"></button>
+                                                </div>
+                                                <div class="seperator">
+                                                    <label class="input-control checkbox">
+                                                        <input type="checkbox" checked="checked">
+                                                        <span class="helper">Yes, please send me newsletter.</span>
+                                                    </label>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="span10">
+                                            <p class="tlc"><input id="formnext" class="bg-color-greenDark fg-color-white" type="button" value="Next &gt;&gt;" /></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formslidein fl" id="formslider">
+                                <div class="grid">
+                                    <div class="row">
+                                        <div class="span10">
+                                            <fieldset class="border-color-blueDark">
+                                                <legend class="fg-color-darken">Youtube link <span class="fg-color-red">*</span></legend>
+                                                <div class="input-control input-vdlk text">
+                                                    <input type="text" placeholder="Enter the link to your youtube video" class="validate[required,custom[youtube]] text-input" data-prompt-position="bottomRight:-40,0" />
+                                                    <button class="helper"></button>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="row goodie-form">
+                                        <div class="span10">
+                                            <fieldset class="border-color-greenLight">
+                                                <legend class="fg-color-darken">Add goodie</legend>
+                                                <p class="fg-color-greenDark tlr"><span class="fl">Name of your goodie: <i class="fg-color-red">*</i></span><a href="#" class="gdremover fg-color-red" title="Remove this goodie"><i class="icon-cancel-2"></i></a></p>
+                                                <div class="input-control text">
+                                                    <input type="text" placeholder="Enter the name of your goodie" class="validate[required] text-input" data-prompt-position="topRight:-40,0" autocomplete="off" />
+                                                    <button class="helper"></button>
+                                                </div>
+                                                <p class="fg-color-greenDark">Description of your goodies: <span class="fg-color-red">*</span></p>
+                                                <div class="input-control textarea">
+                                                    <textarea autocomplete="off"  class="validate[required]" data-prompt-position="topRight:-67,0"></textarea>
+                                                </div>
+                                                <div class="span8">
+                                                    <p class="fg-color-greenDark">Number of goodies you will present: <span class="fg-color-red">*</span></p>
+                                                    <div class="span3 page-gdnum">
+                                                        <div class="input-control text span3">
+                                                            <input type="text" autocomplete="off" class="validate[required,custom[onlyNumber]]" />
+                                                            <input type="hidden" value="">
+                                                            <button class="helper"></button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="span3 page-gditrig">
+                                                        <label class="input-control checkbox">
+                                                            <input type="checkbox" autocomplete="off" class="page-gdinfi">
+                                                            <span class="helper">Unlimited</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="span8">
+                                                    <p class="fg-color-greenDark">How mutch the donor have to donate to get it: <span class="fg-color-red">*</span></p>
+                                                    <div class="span3">
+                                                        <div class="input-control text span3">
+                                                            <input type="text" autocomplete="off" class="validate[required,custom[onlyNumber]]" />
+                                                            <button class="helper"></button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="span1">
+                                                        <div class="input-control  select span1">
+                                                            <select>
+                                                                <option>CHF</option>
+                                                                <option>USD</option>
+                                                                <option>EUR</option>
+                                                                <option>GBP</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="span10">
+                                            <p class="goodie-more"><a href="#" class="button default" id="goodie-add">Add a new goodie</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="span10">
+                                            <p class="tlc"><input id="formprev" class="bg-color-blueDark fg-color-white" type="button" value="&lt;&lt; Previous" /> <input type="submit" value="Create Project" /></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer page">
+            <div class="nav-bar">
+                <div class="nav-bar-inner padding10">
+                    <span class="element">
+                        2012, Site Name XYZ &copy; All rights Reserved
+                    </span>
+                    <span class="divider"><!--divider--></span>
+                    <ul class="menu">
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Site map</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

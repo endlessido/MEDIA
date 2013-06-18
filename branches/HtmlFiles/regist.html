@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>MDEIA.FAR</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/modern.css" rel="stylesheet">
+<link href="css/modern-responsive.css" rel="stylesheet">
+<link href="css/validationEngine.jquery.css" rel="stylesheet">
+<link href="css/pikaday.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+
+<script type="text/javascript" src="js/modern/dropdown.js"></script>
+<script type="text/javascript" src="js/modern/buttonset.js"></script>
+<script type="text/javascript" src="js/modern/input-control.js"></script>
+<script type="text/javascript" src="js/modern/dialog.js"></script>
+<script type="text/javascript" src="js/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="js/languages/jquery.validationEngine-en.js"></script>
+<script type="text/javascript" src="js/jquery.pwstrength.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('#password').pwstrength();
+        $('#page-forms').validationEngine('attach', {
+            onValidationComplete: function(form, status){
+                var month = parseInt($('#birthmonth').val(), 10),
+                    year = parseInt($('#birthyear').val(), 10),
+                    date = parseInt($('#birthdate').val(), 10);
+
+                if (month !== "" && date !=="" && year !== ""){
+                    switch(month) {
+                        case 4:
+                        case 6:
+                        case 9:
+                        case 11: if (date > 30) {
+                            $('#birthdate').validationEngine('showPrompt', 'Lesser Months has 30 days!', 'error', "topRight" , true);
+                            return false;
+                        } else {
+                            return true;
+                        };
+                        break;
+                        case 2: if (date > 28) {
+                                if (date === 29 && new Date(year, 1, 29).getMonth() === 1) {
+                                    return true;
+                                } else if (date > 29 && new Date(year, 1, 29).getMonth() === 1) {
+                                    $('#birthdate').validationEngine('showPrompt', 'February in Leap Year has 29 days!', 'error', "topRight" ,true);
+                                    return false;
+                                } else {
+                                    $('#birthdate').validationEngine('showPrompt', 'February has 28 days!', 'error', "topRight" ,true);
+                                    return false;
+                                }
+                        } else {
+                            return true;
+                        };
+                        break;
+                    }
+                }
+            }
+        });
+    });
+</script>
+</head>
+<body>
+    <form action="" id="page-forms">
+        <div class="page">
+            <div class="nav-bar">
+                <div class="nav-bar-inner padding10">
+                    <p class="element brand"><a href="#" class="fg-color-white"><span class="icon-home page-homeico"><!--FILM ICON--></span></a></p>
+                    <span class="divider"><!--divider--></span>
+                    <ul class="menu">
+                        <li><a href="#">How this site works</a></li>
+                        <li><a href="#">Fundraising</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                    </ul>
+                    <ul class="menu fr">
+                        <li data-role="dropdown">
+                            <a href="#">Welcome, Username!</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">my profile</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Logout</a></li>
+                    <li class="page-nav-lang"><a href="#" title="Change Language to English"><img src="images/flag-gb.png" alt="English"></a><a href="#" title="Change Language to German"><img src="images/flag-de.png" alt="German"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page secondary">
+            <div class="page-header">
+                <div class="page-header-content">
+                    <h1>Create a new account<small>&nbsp;</small></h1>
+                    <a class="back-button big page-back" href="/"></a>
+                </div>
+            </div>
+             
+            <div class="page-region">
+                <div class="page-region-content">
+                    <div class="grid">
+                        <div class="row">
+                            <div class="span10">
+                                <fieldset class="border-color-red">
+                                    <legend class="fg-color-darken">Please fill the forms below, fields with <span class="fg-color-red">*</span> all required</legend>
+                                    <div class="row">
+                                        <div class="span4">
+                                            <p class="fg-color-greenDark">Email <span class="fg-color-red">*</span></p>
+                                            <div class="input-control text span8">
+                                                <!-- <input type="email" autocomplete="off" id="usrem" placeholder="Enter your Email address." class="validate[required,custom[email],ajax[ajaxUserCall]]" /> -->
+                                                <input type="email" autocomplete="off" id="usrem" placeholder="Enter your Email address." class="validate[required,custom[email]]" />
+                                                <button class="helper"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="span4">
+                                            <p class="fg-color-greenDark">Password <span class="fg-color-red">*</span></p>
+                                            <div class="input-control password span4">
+                                                <input type="password" autocomplete="off" placeholder="Enter password." id="password" class="validate[required]" data-indicator="pwindicator" />
+                                                <button class="helper"></button>
+                                            </div>
+                                            <div class="page-pwstrenth">
+                                                <span class="ibk">Password Strenth:</span>
+                                                <div id="pwindicator">
+                                                    <div class="bar"></div>
+                                                    <div class="label"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <p class="fg-color-greenDark">Repeat Password <span class="fg-color-red">*</span></p>
+                                            <div class="input-control password span4">
+                                                <input type="password" autocomplete="off" placeholder="Enter password again." class="validate[required,equals[password]]" />
+                                                <button class="helper"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="fg-color-greenDark">Gender <span class="fg-color-red">*</span></p>
+                                    <label class="input-control radio">
+                                        <input type="radio" name="gender" autocomplete="off" class="validate[required] radio">
+                                        <span class="helper">Male</span>
+                                    </label>
+                                    <label class="input-control radio">
+                                        <input type="radio" name="gender" autocomplete="off" class="validate[required] radio">
+                                        <span class="helper">Female</span>
+                                    </label>
+                                    <p class="fg-color-greenDark">First name <span class="fg-color-red">*</span></p>
+                                    <div class="input-control text span6 as-block">
+                                        <input type="text" autocomplete="off" placeholder="Enter your first name." class="validate[required]" />
+                                        <button class="helper"></button>
+                                    </div>
+                                    <p class="fg-color-greenDark">Last name <span class="fg-color-red">*</span></p>
+                                    <div class="input-control text span6 as-block">
+                                        <input type="text" autocomplete="off" placeholder="Enter your last name." class="validate[required]" />
+                                        <button class="helper"></button>
+                                    </div>
+                                    <p class="fg-color-greenDark">Address <span class="fg-color-red">*</span></p>
+                                    <div class="input-control text span6 as-block">
+                                        <input type="text" autocomplete="off" placeholder="Enter your address." class="validate[required]" />
+                                        <button class="helper"></button>
+                                    </div>
+                                    <div class="span8 as-block">
+                                        <div class="span3">
+                                            <p class="fg-color-greenDark">ZIP<span class="fg-color-red">*</span></p>
+                                            <div class="input-control text span3 as-block">
+                                                <input type="text" autocomplete="off" placeholder="Enter ZIP" class="validate[required]" />
+                                                <button class="helper"></button>
+                                            </div>
+                                        </div>
+                                        <div class="span3">
+                                            <p class="fg-color-greenDark">Town<span class="fg-color-red">*</span></p>
+                                            <div class="input-control text span3 as-block">
+                                                <input type="text" autocomplete="off" placeholder="Enter Town" class="validate[required]" />
+                                                <button class="helper"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="fg-color-greenDark">Country <span class="fg-color-red">*</span></p>
+                                    <div class="span8 as-block">
+                                        <div class="input-control select span6 as-block">
+                                            <select class="validate[required]" name="region">
+                                                <option value="">Select Country</option>
+                                                <option value="0">Switzerland</option>
+                                                <option value="1">Germany</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <p class="fg-color-greenDark">Birthday (Format: DD-MM-YYYY) <span class="fg-color-red">*</span></p>
+                                    <div class="as-block span8 page-reg-birthday">
+                                        <div class="input-control text span2">
+                                            <input type="text" maxlength="2" class="validate[required,custom[integer],min[1],max[31]]" autocomplete="off" id="birthdate" placeholder="Enter date" />
+                                            <button class="helper"></button>
+                                        </div>
+                                        <span class="fl">-</span>
+                                        <div class="input-control text span2">
+                                            <input type="text" maxlength="2" class="validate[required,custom[integer],min[1],max[12]]" autocomplete="off" id="birthmonth" placeholder="Enter month" />
+                                            <button class="helper"></button>
+                                        </div>
+                                        <span class="fl">-</span>
+                                        <div class="input-control text span3">
+                                            <input type="text" maxlength="4" class="validate[required,custom[integer],custom[age],min[1900],minSize[4]]" autocomplete="off" id="birthyear" placeholder="Enter year" />
+                                            <button class="helper"></button>
+                                        </div>
+                                    </div>
+                                    <div class="input-term">
+                                        <label onclick="" class="input-control checkbox">
+                                            <input type="checkbox" autocomplete="off" value="1" name="tac" class="validate[required]">
+                                            <span class="helper">I am over 18 years</span>
+                                        </label>
+                                    </div>
+                                    <div class="input-term">
+                                        <label onclick="" class="input-control checkbox">
+                                            <input type="checkbox" autocomplete="off" value="1" name="tac" class="validate[required]">
+                                            <span class="helper">I've read and agree to XYZ's</span>
+                                        </label><a href="#" id="page-term">terms &amp; conditions</a>
+                                    </div>
+                                    <p>You'll get an email with a link to confirm your email adress</p>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span10">
+                                <p class="tlc"><input type="submit" value="Create account" /></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer page">
+            <div class="nav-bar">
+                <div class="nav-bar-inner padding10">
+                    <span class="element">
+                        2012, Site Name XYZ &copy; All rights Reserved
+                    </span>
+                    <span class="divider"><!--divider--></span>
+                    <ul class="menu">
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Site map</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
